@@ -1,5 +1,8 @@
 (function() {
   Parse.initialize("p45yej86tibQrsfKYCcj6UmNw4o7b6kxtsobZnmA", "fXSkEhDGakCYnVv5OOdAfWDmjAuQvlnFI5KOwIUO");
+  var ShopData = Parse.Object.extend("ShopData");
+  var shopData = new ShopData();
+  var query = new Parse.Query(ShopData);
 
   var app = angular.module("checklist", []);
 
@@ -9,7 +12,9 @@
       id: "Print",
       bool: true
     };
-    self.selectedBranch = "";
+    self.selectedBranch = {
+      name: ""
+    };
     self.viewList = false;
     self.shops = model.shops;
     self.items = model.items;
@@ -38,13 +43,15 @@
     // of a branch
     self.listClick = function(data) {
       self.showList();
-      self.selectedBranch = data.name;
+      self.selectedBranch.name = data.name;
+      loadShopData(data);
       console.log("Load the saves orders for " + data.name);
     };
 
     // Submit the order data to the server for later
     // printing
     self.saveOrder = function() {
+      saveShopData(self.selectedBranch);
       console.log("push the current order to the branch selected");
       console.log("clear the order form");
     };
@@ -56,4 +63,38 @@
       console.log("show a print preview of all the pages that will be printed");
     }
   });
+
+  // Helper method for saving shop orders to the Parse cloud
+  var saveShopData = function(shop) {
+    shopData.set("name", shop.name);
+    shopData.save(null, {
+      success: function(shopData) {
+        // Execute any logic that should take place after the object is saved.
+        alert('New object created with objectId: ' + shopData.id);
+      },
+      error: function(shopData, error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        alert('Failed to create new object, with error code: ' + error.message);
+      }
+    });
+  }
+
+  // Helper method for loading all previously saved data
+  var loadShopData = function(shop) {
+    query.equalTo("name", shop.name);
+    query.limit(10);
+    query.find({
+      success: function(results) {
+        alert("Successfully retrieved " + results.length + " scores.");
+        console.log("works");
+        // The object was retrieved successfully.
+      },
+      error: function(object, error) {
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and message.
+        console.log("nope");
+      }
+    });
+  }
 })();
