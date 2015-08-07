@@ -9,6 +9,7 @@
       id: "Print",
       bool: true
     };
+    self.selectedBranch = "";
     self.viewList = false;
     self.shops = model.shops;
     self.items = model.items;
@@ -37,7 +38,8 @@
     // of a branch
     self.listClick = function(data) {
       self.showList();
-      console.log("Load the saves orders for " + data);
+      self.selectedBranch = data.name;
+      console.log("Load the saves orders for " + data.name);
     };
 
     // Submit the order data to the server for later
