@@ -45,15 +45,18 @@
       self.showList();
       self.selectedBranch.name = data.name;
       loadShopData(data);
-      console.log("Load the saves orders for " + data.name);
     };
 
     // Submit the order data to the server for later
     // printing
     self.saveOrder = function() {
-      saveShopData(self.selectedBranch);
-      console.log("push the current order to the branch selected");
-      console.log("clear the order form");
+      if (self.selectedBranch.name == "") {
+        alert("Please select a branch before you submit");
+      } else {
+        saveShopData(self.selectedBranch);
+        self.selectedBranch.name = "";
+        $("#orderForm")[0].reset();
+      }
     };
 
     // Grabs all data required and proceeds with a print preview
@@ -86,7 +89,6 @@
     query.limit(10);
     query.find({
       success: function(results) {
-        alert("Successfully retrieved " + results.length + " scores.");
         console.log("works");
         // The object was retrieved successfully.
       },
