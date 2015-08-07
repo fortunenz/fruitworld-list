@@ -33,5 +33,12 @@
       console.log("push the current order to the branch selected");
       console.log("clear the order form");
     };
+
+    // Grabs all data required and proceeds with a print preview
+    self.printPreview = function() {
+      console.log("get data from server");
+      console.log("construct the spreadsheet to be printed");
+      console.log("show a print preview of all the pages that will be printed");
+    }
   });
 })();

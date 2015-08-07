@@ -37,6 +37,10 @@
     </div>
     <div ng-show="!app.viewOrder.bool">
       <h3>Choose the shops to print</h3>
+      <div ng-repeat="shop in app.shops">
+        <input type="checkbox" value="true">{{shop.name}}<br>
+      </div>
+      <button ng-click="app.printPreview()">Submit</button>
     </div>
   </body>
 </html>
