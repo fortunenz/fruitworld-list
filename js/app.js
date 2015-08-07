@@ -2,6 +2,15 @@
   var app = angular.module("checklist", []);
 
   app.controller("listView", function() {
-    this.shops = model.shops;
+    var self = this;
+    self.shops = model.shops;
+
+    self.listClick = function(data) {
+      console.log(data);
+    };
   });
 })();
+
+var loadOrder = function() {
+  
+}

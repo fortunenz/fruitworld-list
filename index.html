@@ -17,7 +17,7 @@
         <li>
           <span>Select branch</span>
           <ul ng-controller="listView as list">
-            <li ng-repeat="shop in list.shops">{{shop.name}}</li>
+            <li ng-repeat="shop in list.shops" ng-click="list.listClick(shop.name)">{{shop.name}}</li>
           </ul>
         </li>
       </ul>
