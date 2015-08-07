@@ -17,8 +17,8 @@
       <nav>
         <ul>
           <li>
-            <span>Select branch</span>
-            <ul>
+            <span ng-click="app.showList()">Select branch</span>
+            <ul class="shopList" ng-show="app.viewList">
               <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop.name)">{{shop.name}}</li>
             </ul>
           </li>

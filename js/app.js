@@ -7,6 +7,7 @@
       id: "Print",
       bool: true
     };
+    self.viewList = false;
     self.shops = model.shops;
     self.items = model.items;
 
@@ -21,9 +22,19 @@
       }
     }
 
+    // Displays the list of shops that can be accessed
+    self.showList = function() {
+      if (self.viewList == false) {
+        self.viewList = true;
+      } else {
+        self.viewList = false;
+      }
+    };
+
     // Loads all the saved data from previous orders
     // of a branch
     self.listClick = function(data) {
+      self.showList();
       console.log("Load the saves orders for " + data);
     };
 
