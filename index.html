@@ -11,19 +11,32 @@
     <script src="js/model.js"></script>
     <script src="js/app.js"></script>
   </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <span>Select branch</span>
-          <ul ng-controller="listView as list">
-            <li ng-repeat="shop in list.shops" ng-click="list.listClick(shop.name)">{{shop.name}}</li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+  <body ng-controller="orderCtrl as order">
+    <button ng-click="order.changeView()">{{order.view}}</button>
     <div class="orderForm">
-      
+      <nav>
+        <ul>
+          <li>
+            <span>Select branch</span>
+            <ul>
+              <li ng-repeat="shop in order.shops" ng-click="order.listClick(shop.name)">{{shop.name}}</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <form class="form">
+          <span ng-repeat="item in order.items">
+            {{item.code}}:
+            <input type="number" value="0">
+            <br>
+          </span>
+          <button ng-click="order.saveOrder()">Submit</submit>
+        </form>
+      </div>
+    </div>
+    <div class="print">
+      <h3>Choose the shops to print</h3>
     </div>
   </body>
 </html>
