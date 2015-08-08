@@ -113,7 +113,7 @@
       error: function(object, error) {
         // The object was not retrieved successfully.
         // error is a Parse.Error with an error code and message.
-        console.log("nope");
+        console.log("Unable to load saved orders");
       }
     });
   }
