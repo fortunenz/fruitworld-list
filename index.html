@@ -27,22 +27,34 @@
         </ul>
       </nav>
       <div>
-        <form id="orderForm">
+        <form id="orderForm" ng-submit="app.saveOrder(app)">
           <h2>Selected Branch</h2>
         </p>{{app.selectedBranch.name}}</p>
           <span ng-repeat="item in app.items">
-            {{item.code}}:
-            <input type="number" value="0">
+            <label>{{item.desription}}:</label>
+            <select ng-model="item.ordered">
+              <option value="0">0 ctn</option>
+              <option value="1">1 ctn</option>
+              <option value="2">2 ctn</option>
+              <option value="3">3 ctn</option>
+              <option value="4">4 ctn</option>
+              <option value="5">5 ctn</option>
+              <option value="6">6 ctn</option>
+              <option value="7">7 ctn</option>
+              <option value="8">8 ctn</option>
+              <option value="9">9 ctn</option>
+              <option value="10">10 ctn</option>
+            </select>
             <br>
           </span>
-          <button ng-click="app.saveOrder()">Submit</submit>
+          <input type="submit" value="Submit"/>
         </form>
       </div>
     </div>
     <div ng-show="!app.viewOrder.bool">
       <h3>Choose the shops to print</h3>
       <div ng-repeat="shop in app.shops">
-        <input type="checkbox" value="true">{{shop.name}}<br>
+        <input type="checkbox">{{shop.name}}<br>
       </div>
       <button ng-click="app.printPreview()">Submit</button>
     </div>

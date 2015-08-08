@@ -49,11 +49,12 @@
 
     // Submit the order data to the server for later
     // printing
-    self.saveOrder = function() {
+    self.saveOrder = function(data) {
+      console.log(data);
       if (self.selectedBranch.name == "") {
         alert("Please select a branch before you submit");
       } else {
-        saveShopData(self.selectedBranch);
+        saveShopData(data);
         self.selectedBranch.name = "";
         $("#orderForm")[0].reset();
       }
@@ -69,11 +70,12 @@
 
   // Helper method for saving shop orders to the Parse cloud
   var saveShopData = function(shop) {
-    shopData.set("name", shop.name);
+    shopData.set("name", shop.selectedBranch.name);
+    for (i = 0, len = shop.items.length; i < len; i++) {
+      shopData.set(shop.items[i].code, parseInt(shop.items[i].ordered));
+    }
     shopData.save(null, {
       success: function(shopData) {
-        // Execute any logic that should take place after the object is saved.
-        alert('New object created with objectId: ' + shopData.id);
       },
       error: function(shopData, error) {
         // Execute any logic that should take place if the save fails.
@@ -89,8 +91,7 @@
     query.limit(10);
     query.find({
       success: function(results) {
-        console.log("works");
-        // The object was retrieved successfully.
+        console.log(results);
       },
       error: function(object, error) {
         // The object was not retrieved successfully.
