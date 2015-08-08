@@ -45,7 +45,7 @@
     self.listClick = function(data) {
       self.showList();
       self.selectedBranch.name = data.name;
-      loadShopData(data, $compile, $scope);
+      loadShopDataList(data, $compile, $scope);
       self.selectedBranch.selected = true;
     };
 
@@ -63,8 +63,8 @@
       }
     };
 
-    self.loadOrder = function() {
-      console.log("Load the values of old order");
+    self.loadOrder = function(location) {
+      console.log("Loads the previously saved values on the form");
     };
 
     // Grabs all data required and proceeds with a print preview
@@ -94,7 +94,7 @@
   }
 
   // Helper method for loading all previously saved data
-  var loadShopData = function(shop, compile, scope) {
+  var loadShopDataList = function(shop, compile, scope) {
     $("#loadedOrders").empty();
     query.equalTo("name", shop.name);
     query.limit(10);
@@ -102,7 +102,9 @@
       success: function(results) {
         var temp;
         for (i = 0, len = results.length; i < len; i++) {
-          temp = '<div class="oldOrders" ng-click="app.loadOrder()"><p>File Created: ' +
+          temp = '<div class="oldOrders" ng-click="app.loadOrder(' +
+            i +
+            ')"><p>File Created: ' +
             results[i].createdAt +
             '</p><p>File updated: ' +
             results[i].updatedAt +
