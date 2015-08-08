@@ -29,11 +29,11 @@
         self.viewOrder.id = "Print";
         self.viewOrder.bool = true;
       }
-    }
+    };
 
     // Displays the list of shops that can be accessed
     self.showList = function() {
-      if (self.viewList == false) {
+      if (self.viewList === false) {
         self.viewList = true;
       } else {
         self.viewList = false;
@@ -52,7 +52,7 @@
     // Submit the order data to the server for later
     // printing
     self.saveOrder = function(data) {
-      if (self.selectedBranch.name == "") {
+      if (self.selectedBranch.name === "") {
         alert("Please select a branch before you submit");
       } else {
         saveShopData(data);
@@ -72,7 +72,7 @@
       console.log("get data from server");
       console.log("construct the spreadsheet to be printed");
       console.log("show a print preview of all the pages that will be printed");
-    }
+    };
   });
 
   // Helper method for saving shop orders to the Parse cloud
@@ -109,7 +109,7 @@
             '</p><p>File updated: ' +
             results[i].updatedAt +
             '</p></div>';
-          angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope))
+          angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope));
         }
       },
       error: function(object, error) {
@@ -118,5 +118,5 @@
         console.log("Unable to load saved orders");
       }
     });
-  }
+  };
 })();
