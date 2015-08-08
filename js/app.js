@@ -97,16 +97,15 @@
   var loadShopDataList = function(shop, compile, scope) {
     $("#loadedOrders").empty();
     query.equalTo("name", shop.name);
-    query.limit(10);
+    query.limit(5);
+    query.descending("updatedAt");
     query.find({
       success: function(results) {
         var temp;
         for (i = 0, len = results.length; i < len; i++) {
           temp = '<div class="oldOrders" ng-click="app.loadOrder(' +
             i +
-            ')"><p>File Created: ' +
-            results[i].createdAt +
-            '</p><p>File updated: ' +
+            ')"><p>File last modified: ' +
             results[i].updatedAt +
             '</p></div>';
           angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope));
