@@ -6,14 +6,15 @@
 
   var app = angular.module("checklist", []);
 
-  app.controller("appCtrl", function() {
+  app.controller("appCtrl", function($scope, $compile) {
     var self = this;
     self.viewOrder = {
       id: "Print",
       bool: true
     };
     self.selectedBranch = {
-      name: ""
+      name: "",
+      selected: false
     };
     self.viewList = false;
     self.shops = model.shops;
@@ -44,20 +45,26 @@
     self.listClick = function(data) {
       self.showList();
       self.selectedBranch.name = data.name;
-      loadShopData(data);
+      loadShopData(data, $compile, $scope);
+      self.selectedBranch.selected = true;
     };
 
     // Submit the order data to the server for later
     // printing
     self.saveOrder = function(data) {
-      console.log(data);
       if (self.selectedBranch.name == "") {
         alert("Please select a branch before you submit");
       } else {
         saveShopData(data);
         self.selectedBranch.name = "";
+        self.selectedBranch.selected = false;
         $("#orderForm")[0].reset();
+
       }
+    };
+
+    self.loadOrder = function() {
+      console.log("Load the values of old order");
     };
 
     // Grabs all data required and proceeds with a print preview
@@ -76,6 +83,7 @@
     }
     shopData.save(null, {
       success: function(shopData) {
+        console.log('New object created with objectId: ' + shopData.id);
       },
       error: function(shopData, error) {
         // Execute any logic that should take place if the save fails.
@@ -86,12 +94,21 @@
   }
 
   // Helper method for loading all previously saved data
-  var loadShopData = function(shop) {
+  var loadShopData = function(shop, compile, scope) {
+    $("#loadedOrders").empty();
     query.equalTo("name", shop.name);
     query.limit(10);
     query.find({
       success: function(results) {
-        console.log(results);
+        var temp;
+        for (i = 0, len = results.length; i < len; i++) {
+          temp = '<div class="oldOrders" ng-click="app.loadOrder()"><p>File Created: ' +
+            results[i].createdAt +
+            '</p><p>File updated: ' +
+            results[i].updatedAt +
+            '</p></div>';
+          angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope))
+        }
       },
       error: function(object, error) {
         // The object was not retrieved successfully.
