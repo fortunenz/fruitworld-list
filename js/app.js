@@ -86,9 +86,31 @@
 
     // Grabs all data required and proceeds with a print preview
     self.printPreview = function() {
-      console.log("get data from server");
-      console.log("construct the spreadsheet to be printed");
-      console.log("show a print preview of all the pages that will be printed");
+      if (self.printableShop.length < 1) {
+        alert("Please select the shops you want to have pritned");
+      } else {
+        var spreadsheetArray = [];
+
+        query.descending("updatedAt");
+
+        // Gets all the data from the server and pushes it into a temp
+        // array which will be used to build a spreadsheet
+        for (i = 0, len = self.printableShop.length; i < len; i++) {
+          query.equalTo("name", self.printableShop[i].name);
+          query.first({
+            success: function(results) {
+              spreadsheetArray.push(results);
+            },
+            error: function(object, error) {
+              // The object was not retrieved successfully.
+              // error is a Parse.Error with an error code and message.
+              console.log("Unable to get saved data");
+            }
+          });
+        }
+        console.log("construct the spreadsheet to be printed");
+        console.log("show a print preview of all the pages that will be printed");
+      }
     };
   });
 
