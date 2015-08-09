@@ -17,6 +17,7 @@
       selected: false
     };
     self.viewList = false;
+    self.printableShop = [];
     self.shops = model.shops;
     self.items = model.items;
 
@@ -65,6 +66,22 @@
 
     self.loadOrder = function(location) {
       console.log("Loads the previously saved values on the form");
+    };
+
+    // Add the shop to the print list if checkbox is checked
+    self.selectPrint = function(shop) {
+      if (shop.clicked === false) {
+        shop.clicked = true;
+        self.printableShop.push(shop);
+        console.log(self.printableShop);
+      } else {
+        shop.clicked = false;
+        for (i = 0, len = self.printableShop.length; i < len; i++) {
+          if (self.printableShop[i].name == shop.name) {
+            self.printableShop.pop(i);
+          }
+        }
+      }
     };
 
     // Grabs all data required and proceeds with a print preview
