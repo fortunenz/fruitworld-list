@@ -80,7 +80,6 @@
           if (self.printableShop[i].name == shop.name) {
             self.printableShop.pop(i);
           }
-          console.log(self.printableShop.length);
         }
       }
     };
@@ -91,12 +90,13 @@
         alert("Please select the shops you want to have printed");
       } else {
         $('#loading').show();
+        var spreadsheetArray = [];
 
         // Waits for ajax request to complete before building spreadsheet data
         setTimeout(function() {
           $('#loading').hide();
           $scope.$apply()
-          //buildTable(self.spreadsheetArray);
+          buildTable(spreadsheetArray);
           //window.print();
         }, 3000);
 
@@ -108,7 +108,7 @@
           query.equalTo("name", self.printableShop[i].name);
           query.first({
             success: function(results) {
-              self.spreadsheetArray.push(results);
+              spreadsheetArray.push(results);
             },
             error: function(object, error) {
               // The object was not retrieved successfully.
@@ -166,6 +166,61 @@
   }
 
   var buildTable = function(spreadsheetArray) {
+    $("#print").empty();
+
+    var table = "<table>";
+    table += "<tr>";
+    table += "<th></th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<th>" + spreadsheetArray[i].attributes.name + "</th>";
+    }
+    table += "</tr><tr><th>FW001</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.FW001 > 0) {
+        table += spreadsheetArray[i].attributes.FW001;
+      }
+      table += "</td>";
+    }
+    table += "</tr><tr><th>FW002</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.FW002 > 0) {
+        table += spreadsheetArray[i].attributes.FW002;
+      }
+      table += "</td>";
+    }table += "</tr><tr><th>FW003</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.FW003 > 0) {
+        table += spreadsheetArray[i].attributes.FW003;
+      }
+      table += "</td>";
+    }table += "</tr><tr><th>PRB01</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.PRB01 > 0) {
+        table += spreadsheetArray[i].attributes.PRB01;
+      }
+      table += "</td>";
+    }table += "</tr><tr><th>ROLL05</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.ROLL05 > 0) {
+        table += spreadsheetArray[i].attributes.ROLL05
+      }
+      table += "</td>";
+    }table += "</tr><tr><th>SINGN_M</th>";
+    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+      table += "<td>";
+      if (spreadsheetArray[i].attributes.SINGN_M > 0) {
+        table += spreadsheetArray[i].attributes.SINGN_M;
+      }
+      table += "</td>";
+    }table += "</tr><tr>";
+    table += "</table>";
+
+    $("#print").append(table);
     console.log(spreadsheetArray);
     console.log("append a table to the view");
 
