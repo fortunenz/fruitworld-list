@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fruit World Checklist</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="css/style-print.css" rel="stylesheet" media="print">
     <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <script src="bower_components\jquery-2.1.4.min\jquery-2.1.4.min.js"></script>
@@ -17,9 +18,9 @@
   </head>
   <body ng-controller="appCtrl as app">
     <div id="loading"></div>
-    <h1>Fruit World Checklist</h1>
-    <button ng-click="app.changeView()">{{app.viewOrder.id}}</button>
-    <div ng-show="app.viewOrder.bool">
+    <h1 class="no-print">Fruit World Checklist</h1>
+    <button class="no-print" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
+    <div class="no-print" ng-show="app.viewOrder.bool">
       <nav>
         <ul>
           <li>
@@ -59,11 +60,16 @@
       </div>
     </div>
     <div ng-show="!app.viewOrder.bool">
-      <h3>Choose the shops to print</h3>
-      <div ng-repeat="shop in app.shops">
+      <h3 class="no-print" >Choose the shops to print</h3>
+      <div class="no-print" ng-repeat="shop in app.shops">
         <input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}<br>
       </div>
-      <button ng-click="app.printPreview()">Submit</button>
+      <button class="no-print" ng-click="app.printPreview()">Print</button>
+      <div class="print">
+        <table>
+          
+        </table>
+      </div>
     </div>
   </body>
 </html>
