@@ -88,6 +88,7 @@
       if (self.printableShop.length < 1) {
         alert("Please select the shops you want to have pritned");
       } else {
+        $('#loading').show();
         var spreadsheetArray = [];
 
         query.descending("updatedAt");
@@ -110,6 +111,7 @@
 
         // Waits for ajax request to complete before building spreadsheet data
         setTimeout(function() {
+          $('#loading').hide();
           console.log(spreadsheetArray);
           console.log("construct the spreadsheet to be printed");
           console.log("show a print preview of all the pages that will be printed");

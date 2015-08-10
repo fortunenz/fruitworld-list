@@ -8,11 +8,13 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="bower_components\jquery-2.1.4.min\jquery-2.1.4.min.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+    <script src="js/onLoad.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/model.js"></script>
     <script src="js/app.js"></script>
   </head>
   <body ng-controller="appCtrl as app">
+    <div id="loading"></div>
     <h1>Fruit World Checklist</h1>
     <button ng-click="app.changeView()">{{app.viewOrder.id}}</button>
     <div ng-show="app.viewOrder.bool">
