@@ -73,7 +73,6 @@
       if (shop.clicked === false) {
         shop.clicked = true;
         self.printableShop.push(shop);
-        console.log(self.printableShop);
       } else {
         shop.clicked = false;
         for (i = 0, len = self.printableShop.length; i < len; i++) {
@@ -108,8 +107,13 @@
             }
           });
         }
-        console.log("construct the spreadsheet to be printed");
-        console.log("show a print preview of all the pages that will be printed");
+
+        // Waits for ajax request to complete before building spreadsheet data
+        setTimeout(function() {
+          console.log(spreadsheetArray);
+          console.log("construct the spreadsheet to be printed");
+          console.log("show a print preview of all the pages that will be printed");
+        }, 3000);
       }
     };
   });
