@@ -4,3 +4,11 @@
   height: 100%;
   background: url('loading.gif') no-repeat center center;
 }
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Lora', serif;
+}
