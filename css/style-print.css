@@ -1,3 +1,7 @@
 .no-print {
   display: none;
 }
+
+@page {
+  size: landscape
+}
