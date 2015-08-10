@@ -76,7 +76,7 @@
         self.printableShop.push(shop);
       } else {
         shop.clicked = false;
-        for (i = 0, len = self.printableShop.length; i < len; i++) {
+        for (i = 0; i < self.printableShop.length; i++) {
           if (self.printableShop[i].name == shop.name) {
             self.printableShop.pop(i);
           }
