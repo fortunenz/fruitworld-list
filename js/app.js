@@ -94,11 +94,9 @@
         // Waits for ajax request to complete before building spreadsheet data
         setTimeout(function() {
           $('#loading').hide();
-          console.log(spreadsheetArray);
+          buildTable(spreadsheetArray);
           window.print();
-          console.log("construct the spreadsheet to be printed");
-          console.log("show a print preview of all the pages that will be printed");
-        }, 2000);
+        }, 3000);
 
         query.descending("updatedAt");
 
@@ -163,5 +161,11 @@
         console.log("Unable to load saved orders");
       }
     });
-  };
+  }
+
+  var buildTable = function(spreadsheetArray) {
+    console.log(spreadsheetArray);
+    console.log("append a table to the view");
+
+  }
 })();
