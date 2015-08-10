@@ -97,7 +97,7 @@
           $('#loading').hide();
           $scope.$apply()
           buildTable(spreadsheetArray);
-          //window.print();
+          window.print();
         }, 3000);
 
         query.descending("updatedAt");
