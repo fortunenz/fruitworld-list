@@ -18,6 +18,7 @@
     };
     self.viewList = false;
     self.printableShop = [];
+    self.spreadsheetArray = [];
     self.shops = model.shops;
     self.items = model.items;
 
@@ -79,6 +80,7 @@
           if (self.printableShop[i].name == shop.name) {
             self.printableShop.pop(i);
           }
+          console.log(self.printableShop.length);
         }
       }
     };
@@ -89,13 +91,13 @@
         alert("Please select the shops you want to have printed");
       } else {
         $('#loading').show();
-        var spreadsheetArray = [];
 
         // Waits for ajax request to complete before building spreadsheet data
         setTimeout(function() {
           $('#loading').hide();
-          buildTable(spreadsheetArray);
-          window.print();
+          $scope.$apply()
+          //buildTable(self.spreadsheetArray);
+          //window.print();
         }, 3000);
 
         query.descending("updatedAt");
@@ -106,7 +108,7 @@
           query.equalTo("name", self.printableShop[i].name);
           query.first({
             success: function(results) {
-              spreadsheetArray.push(results);
+              self.spreadsheetArray.push(results);
             },
             error: function(object, error) {
               // The object was not retrieved successfully.
