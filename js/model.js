@@ -159,8 +159,32 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "SINGN_M",
+      "desription": "Natural singlet bag (Medium)",
+      "unit": "1000",
+      "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "SING_M",
+      "desription": "White singlet bag (Medium)",
+      "unit": "1000",
+      "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "FW003",
       "desription": "Fruit World roll bag (300x450mm) 3kg",
+      "unit": "Roll",
+      "packaging": "4 rolls/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "ROLL05",
+      "desription": "Roll bag (300x450mm) 3kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
@@ -175,19 +199,331 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "ROLL05",
-      "desription": "Roll bag (300x450mm) 3kg",
+      "code": "PRB02",
+      "desription": "Produce bag (200x375mm)",
+      "unit": "1000",
+      "packaging": "4,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB03",
+      "desription": "Produce bag (200x300mm) 1.0kg",
+      "unit": "1000",
+      "packaging": "5,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB04",
+      "desription": "Produce bag (225x375mm) 1.5kg",
+      "unit": "1000",
+      "packaging": "3,500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB05",
+      "desription": "Produce bag (250x425mm) 2.0kg",
+      "unit": "1000",
+      "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB06",
+      "desription": "Produce bag (250x500mm) 3.0kg",
+      "unit": "1000",
+      "packaging": "2,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "PRB07",
+      "desription": "Produce bag (300x350mm) Spinach",
+      "unit": "1000",
+      "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "POTA01",
+      "desription": "Potato bag 3.0kg",
+      "unit": "1000",
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "POTA02",
+      "desription": "Potato bag 5.0kg",
+      "unit": "1000",
+      "packaging": "2,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "MUSH01",
+      "desription": "Printed mushroom paper bag",
+      "unit": "Pack",
+      "packaging": "500 pcs/pkt",
+      "orderAs": "pack",
+      "ordered": 0
+    },
+    {
+      "code": "FW375",
+      "desription": "Foodwrap (375mm x 1200m)",
+      "unit": "Roll",
+      "packaging": "2 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "FW450",
+      "desription": "Foodwrap (450mm x 1200m)",
+      "unit": "Roll",
+      "packaging": "2 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "ONION01",
+      "desription": "Onion bag 2.0kg",
+      "unit": "1000",
+      "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP55",
+      "desription": "Foam plate #55 W",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP57",
+      "desription": "Foam plate #57 W",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP58",
+      "desription": "Foam plate #58 W",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP59",
+      "desription": "Foam plate #59 W",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP85",
+      "desription": "Foam plate #85 W",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP86",
+      "desription": "Foam plate #86 W",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP55B",
+      "desription": "Foam plate #55 B",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP57B",
+      "desription": "Foam plate #57 B",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP58B",
+      "desription": "Foam plate #58 B",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP59B",
+      "desription": "Foam plate #59 B",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP85B",
+      "desription": "Foam plate #85 B",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP86B",
+      "desription": "Foam plate #86 B",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "TP001",
+      "desription": "Toilet paper",
+      "unit": "Bundl",
+      "packaging": "100 rolls/bundl",
+      "orderAs": "bundl",
+      "ordered": 0
+    },
+    {
+      "code": "NB405",
+      "desription": "Netlon bag (405mm) red",
+      "unit": "1000",
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "NB405Y",
+      "desription": "Netlon bag (405mm) yellow",
+      "unit": "1000",
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "NB505",
+      "desription": "Netlon bag (505mm) red",
+      "unit": "1000",
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "MUSH02",
+      "desription": "Mushroom plastic bag (175x300mm)",
+      "unit": "1000",
+      "packaging": "5,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "MUSH03",
+      "desription": "Mushroom plastic bag (200x375mm)",
+      "unit": "1000",
+      "packaging": "2,500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "RE017",
+      "desription": "Resealable bag (200x255mm)",
+      "unit": "1000",
+      "packaging": "250 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "FORK",
+      "desription": "Plastic fork",
+      "unit": "1000",
+      "packaging": "1,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "ROLL04",
+      "desription": "Roll bag (250x125x475mm) 5.0kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
     {
-      "code": "SINGN_M",
-      "desription": "Natural singlet bag (Medium)",
-      "unit": "1000",
-      "packaging": "3,000 pcs/ctn",
-      "orderAs": "ctn",
+      "code": "SEAL09",
+      "desription": "Bag seal tape (9mm x 66m)",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL12R",
+      "desription": "Bag seal tape (12mm x 66m) Red",
+      "unit": "Roll",
+      "packaging": "36 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL12G",
+      "desription": "Bag seal tape (12mm x 66m) Green",
+      "unit": "Roll",
+      "packaging": "36 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "PW002",
+      "desription": "Palletwrap",
+      "unit": "Roll",
+      "packaging": "4 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "GLOVES01S",
+      "desription": "Vinyl gloves small",
+      "unit": "box",
+      "packaging": "10 boxes/ctn",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "GLOVES01M",
+      "desription": "Vinyl gloves medium",
+      "unit": "box",
+      "packaging": "10 boxes/ctn",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "GLOVES01L",
+      "desription": "Vinyl gloves large",
+      "unit": "box",
+      "packaging": "10 boxes/ctn",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
+      "code": "GLOVES01XL",
+      "desription": "Vinyl gloves extra large",
+      "unit": "box",
+      "packaging": "10 boxes/ctn",
+      "orderAs": "box",
       "ordered": 0
     }
   ]
