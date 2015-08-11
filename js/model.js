@@ -2,114 +2,142 @@ var model = {
   "shops": [
     {
       "name": "Fruit World Henderson",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Pakuranga",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World New Lynn",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Glen Innes",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Silverdale",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Albert",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Ponsonby",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Pukekohe",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Albany",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Botany",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Dannemora",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Roskill",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Chatswood",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Takanini",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Howick",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Greenlane",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Pioneer Plaza",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Wellington",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Whangaporaoa",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Hobsonville",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Hamilton",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Rosedale",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Fruit World Rosedale Albany",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 1",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 2",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 3",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 4",
+      "short": "H'son",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 5",
+      "short": "H'son",
       "clicked": false
     }
   ],

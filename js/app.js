@@ -14,6 +14,7 @@
     };
     self.selectedBranch = {
       name: "",
+      short: "",
       selected: false
     };
     self.viewList = false;
@@ -47,6 +48,7 @@
     self.listClick = function(data) {
       self.showList();
       self.selectedBranch.name = data.name;
+      self.selectedBranch.short = data.short;
       loadShopDataList(data, $compile, $scope);
       self.selectedBranch.selected = true;
     };
@@ -59,6 +61,7 @@
       } else {
         saveShopData(data);
         self.selectedBranch.name = "";
+        self.selectedBranch.short = "";
         self.selectedBranch.selected = false;
         $("#orderForm")[0].reset();
 
@@ -124,6 +127,7 @@
   // Helper method for saving shop orders to the Parse cloud
   var saveShopData = function(shop) {
     shopData.set("name", shop.selectedBranch.name);
+    shopData.set("short", shop.selectedBranch.short);
     for (i = 0, len = shop.items.length; i < len; i++) {
       shopData.set(shop.items[i].code, parseInt(shop.items[i].ordered));
     }
@@ -167,50 +171,61 @@
 
   var buildTable = function(spreadsheetArray) {
     $("#print").empty();
+    var tempTotal;
 
     var table = "<table>";
     table += "<tr>";
     table += "<th></th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
-      table += "<th>" + spreadsheetArray[i].attributes.name + "</th>";
+      table += "<th>" + spreadsheetArray[i].attributes.short + "</th>";
     }
-    table += "</tr><tr><th>FW001</th>";
+    table += "<td>Total</td>"
+    table += "</tr>";
+    tempTotal = 0;
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
-      table += "<td>";
-      if (spreadsheetArray[i].attributes.FW001 > 0) {
-        table += spreadsheetArray[i].attributes.FW001;
-      }
-      table += "</td>";
+      tempTotal += spreadsheetArray[i].attributes.FW001;
     }
-    table += "</tr><tr><th>FW002</th>";
+    if (tempTotal > 0) {
+      table += "<tr><th>Fruit World singlet bag (Large)</th>";
+      for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+        table += "<td>";
+        if (spreadsheetArray[i].attributes.FW001 > 0) {
+          table += spreadsheetArray[i].attributes.FW001;
+        }
+        table += "</td>";
+      }
+      table += "<td>" + tempTotal + "</td>"
+      table += "</tr>";
+    }
+    table += "<tr><th>Fruit World singlet bag (Small)</th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
       table += "<td>";
       if (spreadsheetArray[i].attributes.FW002 > 0) {
         table += spreadsheetArray[i].attributes.FW002;
       }
       table += "</td>";
-    }table += "</tr><tr><th>FW003</th>";
+    }table += "</tr><tr><th>Fruit World roll bag (300x450mm) 3kg</th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
       table += "<td>";
       if (spreadsheetArray[i].attributes.FW003 > 0) {
         table += spreadsheetArray[i].attributes.FW003;
       }
       table += "</td>";
-    }table += "</tr><tr><th>PRB01</th>";
+    }table += "</tr><tr><th>Produce bag (150x300mm) 0.5kg</th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
       table += "<td>";
       if (spreadsheetArray[i].attributes.PRB01 > 0) {
         table += spreadsheetArray[i].attributes.PRB01;
       }
       table += "</td>";
-    }table += "</tr><tr><th>ROLL05</th>";
+    }table += "</tr><tr><th>Roll bag (300x450mm) 3kg</th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
       table += "<td>";
       if (spreadsheetArray[i].attributes.ROLL05 > 0) {
         table += spreadsheetArray[i].attributes.ROLL05
       }
       table += "</td>";
-    }table += "</tr><tr><th>SINGN_M</th>";
+    }table += "</tr><tr><th>Natural singlet bag (Medium)</th>";
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
       table += "<td>";
       if (spreadsheetArray[i].attributes.SINGN_M > 0) {

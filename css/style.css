@@ -13,6 +13,23 @@ h1 {
   font-family: 'Lora', serif;
 }
 
-/*.print {
-  display: none;
-}*/
+table, th, td {
+    border: 1px solid black;
+}
+
+@media screen {
+  .print {
+    display: none;
+    font-size: 5pt;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  @page {
+    size: landscape
+  }
+}
