@@ -17,9 +17,6 @@ var buildTable = function(spreadsheetArray) {
   table += "</table>";
 
   $("#print").append(table);
-  console.log(spreadsheetArray);
-  console.log("append a table to the view");
-
 }
 
 // Builds all the rows
