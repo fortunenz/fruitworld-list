@@ -296,7 +296,15 @@ var model = {
     },
     {
       "code": "FP55",
-      "desription": "Foam plate #55 W",
+      "desription": "Foam plate #55 White",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP55B",
+      "desription": "Foam plate #55 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -304,47 +312,7 @@ var model = {
     },
     {
       "code": "FP57",
-      "desription": "Foam plate #57 W",
-      "unit": "Ctn",
-      "packaging": "500 pcs/ctn",
-      "orderAs": "ctn",
-      "ordered": 0
-    },
-    {
-      "code": "FP58",
-      "desription": "Foam plate #58 W",
-      "unit": "Ctn",
-      "packaging": "500 pcs/ctn",
-      "orderAs": "ctn",
-      "ordered": 0
-    },
-    {
-      "code": "FP59",
-      "desription": "Foam plate #59 W",
-      "unit": "Ctn",
-      "packaging": "500 pcs/ctn",
-      "orderAs": "ctn",
-      "ordered": 0
-    },
-    {
-      "code": "FP85",
-      "desription": "Foam plate #85 W",
-      "unit": "Ctn",
-      "packaging": "600 pcs/ctn",
-      "orderAs": "ctn",
-      "ordered": 0
-    },
-    {
-      "code": "FP86",
-      "desription": "Foam plate #86 W",
-      "unit": "Ctn",
-      "packaging": "600 pcs/ctn",
-      "orderAs": "ctn",
-      "ordered": 0
-    },
-    {
-      "code": "FP55B",
-      "desription": "Foam plate #55 B",
+      "desription": "Foam plate #57 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -352,7 +320,15 @@ var model = {
     },
     {
       "code": "FP57B",
-      "desription": "Foam plate #57 B",
+      "desription": "Foam plate #57 Black",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP58",
+      "desription": "Foam plate #58 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -360,7 +336,15 @@ var model = {
     },
     {
       "code": "FP58B",
-      "desription": "Foam plate #58 B",
+      "desription": "Foam plate #58 Black",
+      "unit": "Ctn",
+      "packaging": "500 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP59",
+      "desription": "Foam plate #59 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -368,15 +352,31 @@ var model = {
     },
     {
       "code": "FP59B",
-      "desription": "Foam plate #59 B",
+      "desription": "Foam plate #59 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
     {
+      "code": "FP85",
+      "desription": "Foam plate #85 White",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "FP85B",
-      "desription": "Foam plate #85 B",
+      "desription": "Foam plate #85 Black",
+      "unit": "Ctn",
+      "packaging": "600 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "FP86",
+      "desription": "Foam plate #86 White",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -384,7 +384,7 @@ var model = {
     },
     {
       "code": "FP86B",
-      "desription": "Foam plate #86 B",
+      "desription": "Foam plate #86 Black",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -463,8 +463,72 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "SEAL09",
-      "desription": "Bag seal tape (9mm x 66m)",
+      "code": "SEAL09R",
+      "desription": "Bag seal tape (9mm x 66m) red",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09G",
+      "desription": "Bag seal tape (9mm x 66m) green",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09C",
+      "desription": "Bag seal tape (9mm x 66m) clear",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09BR",
+      "desription": "Bag seal tape (9mm x 66m) brown",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09BL",
+      "desription": "Bag seal tape (9mm x 66m) black",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09W",
+      "desription": "Bag seal tape (9mm x 66m) white",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09B",
+      "desription": "Bag seal tape (9mm x 66m) blue",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09Y",
+      "desription": "Bag seal tape (9mm x 66m) yellow",
+      "unit": "Roll",
+      "packaging": "48 rolls/ctn",
+      "orderAs": "roll",
+      "ordered": 0
+    },
+    {
+      "code": "SEAL09O",
+      "desription": "Bag seal tape (9mm x 66m) orange",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",

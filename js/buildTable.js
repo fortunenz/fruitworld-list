@@ -40,7 +40,7 @@ var buildRow = function(spreadsheetArray) {
         }
         table += "</td>";
       }
-      table += "<td>" + tempTotal + "</td>";
+      table += "<td>" + tempTotal + "</td><td>" + items[k].orderAs + "</td>";
       table += "</tr>";
     }
   }
