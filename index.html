@@ -37,19 +37,8 @@
         </p>{{app.selectedBranch.name}}</p>
           <span ng-repeat="item in app.items">
             <label>{{item.desription}}:</label>
-            <select ng-model="item.ordered">
-              <option value="0">0 ctn</option>
-              <option value="1">1 ctn</option>
-              <option value="2">2 ctn</option>
-              <option value="3">3 ctn</option>
-              <option value="4">4 ctn</option>
-              <option value="5">5 ctn</option>
-              <option value="6">6 ctn</option>
-              <option value="7">7 ctn</option>
-              <option value="8">8 ctn</option>
-              <option value="9">9 ctn</option>
-              <option value="10">10 ctn</option>
-            </select>
+            <input ng-model="item.ordered" type="number" value="0" step="0.01" min="0">
+            <label>{{item.orderAs}}</label>
             <br>
           </span>
           <input type="submit" value="Submit"/>
@@ -64,8 +53,10 @@
       <div class="no-print" ng-repeat="shop in app.shops">
         <input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}<br>
       </div>
-      <button class="no-print" ng-click="app.printPreview()">Print</button>
+      <button class="no-print" ng-click="app.printPreview()">Load</button>
       <div id="print">
+      </div>
+      <div id="printButton" class="no-print">
       </div>
     </div>
   </body>

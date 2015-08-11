@@ -147,6 +147,7 @@ var model = {
       "desription": "Fruit World singlet bag (Large)",
       "unit": "1000",
       "packaging": "2,000 pcs/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     },
     {
@@ -154,6 +155,7 @@ var model = {
       "desription": "Fruit World singlet bag (Small)",
       "unit": "1000",
       "packaging": "4,000 pcs/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     },
     {
@@ -161,6 +163,7 @@ var model = {
       "desription": "Fruit World roll bag (300x450mm) 3kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     },
     {
@@ -168,6 +171,7 @@ var model = {
       "desription": "Produce bag (150x300mm) 0.5kg",
       "unit": "1000",
       "packaging": "6,000 pcs/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     },
     {
@@ -175,6 +179,7 @@ var model = {
       "desription": "Roll bag (300x450mm) 3kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     },
     {
@@ -182,6 +187,7 @@ var model = {
       "desription": "Natural singlet bag (Medium)",
       "unit": "1000",
       "packaging": "3,000 pcs/ctn",
+      "orderAs": "ctn",
       "ordered": 0
     }
   ]

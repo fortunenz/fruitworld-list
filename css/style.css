@@ -17,11 +17,8 @@ table, th, td {
     border: 1px solid black;
 }
 
-@media screen {
-  .print {
-    display: none;
-    font-size: 5pt;
-  }
+#print {
+  font-size: 10px;
 }
 
 @media print {

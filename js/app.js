@@ -99,8 +99,9 @@
           $('#loading').hide();
           $scope.$apply()
           buildTable(spreadsheetArray);
-          window.print();
-        }, 3000);
+          $("#printButton").empty();
+          $("#printButton").append('<button onclick="window.print()">Print</button>');
+        }, 2500);
 
         query.descending("updatedAt");
 

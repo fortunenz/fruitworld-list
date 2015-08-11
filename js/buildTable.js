@@ -1,7 +1,6 @@
 var buildTable = function(spreadsheetArray) {
   $("#print").empty();
   var tempTotal;
-  var items = model.items;
 
   var table = "<table>";
   table += "<tr>";
@@ -9,8 +8,9 @@ var buildTable = function(spreadsheetArray) {
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
     table += "<th>" + spreadsheetArray[i].attributes.short + "</th>";
   }
-  table += "<td>Total</td>"
+  table += "<th>Total</th>"
   table += "</tr>";
+
   tempTotal = 0;
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
     tempTotal += spreadsheetArray[i].attributes.FW001;
