@@ -97,7 +97,7 @@
         // Waits for ajax request to complete before building spreadsheet data
         setTimeout(function() {
           $('#loading').hide();
-          $scope.$apply()
+          $scope.$apply();
           buildTable(spreadsheetArray);
           $("#printButton").empty();
           $("#printButton").append('<button onclick="window.print()">Print</button>');
@@ -143,7 +143,7 @@
         alert('Failed to create new object, with error code: ' + error.message);
       }
     });
-  }
+  };
 
   // Helper method for loading all previously saved data
   var loadShopDataList = function(shop, compile, scope) {
@@ -169,5 +169,5 @@
         console.log("Unable to load saved orders");
       }
     });
-  }
+  };
 })();

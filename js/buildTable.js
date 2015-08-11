@@ -9,7 +9,7 @@ var buildTable = function(spreadsheetArray) {
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
     table += "<th>" + spreadsheetArray[i].attributes.short + "</th>";
   }
-  table += "<th>Total</th>"
+  table += "<th>Total</th>";
   table += "</tr>";
 
   table += buildRow(spreadsheetArray);
@@ -17,7 +17,7 @@ var buildTable = function(spreadsheetArray) {
   table += "</table>";
 
   $("#print").append(table);
-}
+};
 
 // Builds all the rows
 var buildRow = function(spreadsheetArray) {
@@ -40,10 +40,10 @@ var buildRow = function(spreadsheetArray) {
         }
         table += "</td>";
       }
-      table += "<td>" + tempTotal + "</td>"
+      table += "<td>" + tempTotal + "</td>";
       table += "</tr>";
     }
   }
 
   return table;
-}
+};
