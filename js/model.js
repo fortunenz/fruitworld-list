@@ -7,7 +7,7 @@ var model = {
     },
     {
       "name": "Fruit World Pakuranga",
-      "short": "H'son",
+      "short": "Pak",
       "clicked": false
     },
     {

@@ -1,7 +1,7 @@
 (function() {
   Parse.initialize("p45yej86tibQrsfKYCcj6UmNw4o7b6kxtsobZnmA", "fXSkEhDGakCYnVv5OOdAfWDmjAuQvlnFI5KOwIUO");
   var ShopData = Parse.Object.extend("ShopData");
-  var shopData = new ShopData();
+  var shopData;
   var query = new Parse.Query(ShopData);
 
   var app = angular.module("checklist", []);
@@ -64,7 +64,6 @@
         self.selectedBranch.short = "";
         self.selectedBranch.selected = false;
         $("#orderForm")[0].reset();
-
       }
     };
 
@@ -126,6 +125,7 @@
 
   // Helper method for saving shop orders to the Parse cloud
   var saveShopData = function(shop) {
+    shopData = new ShopData();
     shopData.set("name", shop.selectedBranch.name);
     shopData.set("short", shop.selectedBranch.short);
     for (i = 0, len = shop.items.length; i < len; i++) {
@@ -134,6 +134,7 @@
     shopData.save(null, {
       success: function(shopData) {
         console.log('New object created with objectId: ' + shopData.id);
+
       },
       error: function(shopData, error) {
         // Execute any logic that should take place if the save fails.
