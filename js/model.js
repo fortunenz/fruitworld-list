@@ -1,108 +1,8 @@
 var model = {
   "shops": [
     {
-      "name": "Fruit World Henderson",
-      "short": "H'son",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Pakuranga",
-      "short": "Pak",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World New Lynn",
-      "short": "N'lynn",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Glen Innes",
-      "short": "G'innes",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Silverdale",
-      "short": "S'dale",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Mt Albert",
-      "short": "Mt Albrt",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Ponsonby",
-      "short": "Pnsnby",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Pukekohe",
-      "short": "Puke",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Albany",
-      "short": "Albany",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Botany",
-      "short": "Botany",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Dannemora",
-      "short": "Danne",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Mt Roskill",
-      "short": "Mt Rosk",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Chatswood",
-      "short": "Chatwd",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Takanini",
-      "short": "Taka",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Howick",
-      "short": "Howick",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Greenlane",
-      "short": "G'lane",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Pioneer Plaza",
-      "short": "P'plaza",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Mt Wellington",
-      "short": "Mt Well",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Whangaporaoa",
-      "short": "Whanga",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Hobsonville",
-      "short": "Hobson",
-      "clicked": false
-    },
-    {
-      "name": "Fruit World Hamilton",
-      "short": "Hamilton",
+      "name": "Supa Fruit Mart 1",
+      "short": "Supa 1",
       "clicked": false
     },
     {
@@ -111,13 +11,58 @@ var model = {
       "clicked": false
     },
     {
-      "name": "Fruit World Rosedale Albany",
+      "name": "Supa Fruit Mart 3",
+      "short": "Supa 3",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Kumeu",
+      "short": "Kumeu",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Silverdale",
+      "short": "S'dale",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Albany",
       "short": "Albany",
       "clicked": false
     },
     {
-      "name": "Supa Fruit Mart 1",
-      "short": "Supa 1",
+      "name": "Fruit World Henderson",
+      "short": "H'son",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World New Lynn",
+      "short": "N'lynn",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Chatswood",
+      "short": "Chatwd",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Pioneer Plaza",
+      "short": "P'plaza",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Whangaporaoa",
+      "short": "Whanga",
+      "clicked": false
+    },
+    {
+      "name": "Supa Fruit Mart 5",
+      "short": "Supa 5",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Hobsonville",
+      "short": "Hobson",
       "clicked": false
     },
     {
@@ -126,18 +71,78 @@ var model = {
       "clicked": false
     },
     {
-      "name": "Supa Fruit Mart 3",
-      "short": "Supa 3",
-      "clicked": false
-    },
-    {
       "name": "Supa Fruit Mart 4",
       "short": "Supa 4",
       "clicked": false
     },
     {
-      "name": "Supa Fruit Mart 5",
-      "short": "Supa 5",
+      "name": "Fresh World Mt Eden",
+      "short": "Mt Eden",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Greenlane",
+      "short": "G'lane",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Mt Albert",
+      "short": "Mt Albrt",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Mt Roskill",
+      "short": "Mt Rosk",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Ponsonby",
+      "short": "Pnsnby",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Takanini",
+      "short": "Taka",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Botany",
+      "short": "Botany",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Glen Innes",
+      "short": "G'innes",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Pakuranga",
+      "short": "Pak",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Pukekohe",
+      "short": "Puke",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Dannemora",
+      "short": "Danne",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Howick",
+      "short": "Howick",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Mt Wellington",
+      "short": "Mt Well",
+      "clicked": false
+    },
+    {
+      "name": "Fruit World Hamilton",
+      "short": "Hamilton",
       "clicked": false
     }
   ],
