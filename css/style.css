@@ -81,12 +81,27 @@ h2, h3 {
   width: 50px;
 }
 
+.chooseShopHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkboxes {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 ul {
   list-style-type: none;
 }
 
 ul:hover {
   cursor: pointer;
+}
+
+li {
+  margin-top: 5px;
 }
 
 .item {
@@ -99,6 +114,33 @@ ul:hover {
   position: fixed;
   top: 0px;
   right: 0px;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 29;
+  -moz-border-radius: 29;
+  border-radius: 29px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 5px 20px 6px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
 
 #loading {
@@ -114,6 +156,14 @@ table, th, td {
 
 #print {
   font-size: 10px;
+}
+
+#printButton {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
 }
 
 @media print {

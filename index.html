@@ -21,16 +21,16 @@
     <div class="row">
       <img class="no-print col-2 logo"src="images/logo.png">
       <h1 class="no-print col-10">Fruit World Checklist</h1>
-      <button class="no-print col-12" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
+      <button class="no-print col-12 btn" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
     </div>
 
     <div class="no-print" ng-show="app.viewOrder.bool">
       <nav>
         <ul>
           <li>
-            <span ng-click="app.showList()">Select branch</span>
+            <span ng-click="app.showList()" class="btn">Select branch</span>
             <ul class="shopList" ng-show="app.viewList">
-              <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop)">{{shop.name}}</li>
+              <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop)" class="btn">{{shop.name}}</li>
             </ul>
           </li>
         </ul>
@@ -45,7 +45,7 @@
             <label class="col-4">{{item.orderAs}}</label>
             <br>
           </span>
-          <input class="saveOrderBtn" type="submit" value="Submit"/>
+          <input class="saveOrderBtn btn" type="submit" value="Submit"/>
         </form>
       </div>
       <h3 ng-show="app.selectedBranch.selected">Saved orders for {{app.selectedBranch.name}}</h3>
@@ -54,12 +54,14 @@
     </div>
 
     <div ng-show="!app.viewOrder.bool">
-      <h2 class="no-print" >Choose the shops to print</h3>
-      <div class="no-print" ng-repeat="shop in app.shops">
+      <h2 class="no-print chooseShopHeader">Choose the shops to print</h3>
+      <div class="no-print checkboxes" ng-repeat="shop in app.shops">
         <label><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
         <br>
       </div>
-      <button class="no-print" ng-click="app.printPreview()">Load</button>
+      <div class="center">
+        <button class="no-print btn" ng-click="app.printPreview()">Load</button>
+      </div>
       <div id="print">
       </div>
       <div id="printButton" class="no-print">
