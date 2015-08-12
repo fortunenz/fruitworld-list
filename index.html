@@ -30,7 +30,7 @@
           <li>
             <span ng-click="app.showList()" class="btn">Select branch</span>
             <ul class="shopList" ng-show="app.viewList">
-              <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop)" class="btn">{{shop.name}}</li>
+              <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop)" class="btnShops">{{shop.name}}</li>
             </ul>
           </li>
         </ul>
@@ -56,11 +56,11 @@
     <div ng-show="!app.viewOrder.bool">
       <h2 class="no-print chooseShopHeader">Choose the shops to print</h3>
       <div class="no-print checkboxes" ng-repeat="shop in app.shops">
-        <label><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
+        <label class="btnShops"><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
         <br>
       </div>
       <div class="center">
-        <button class="no-print btn" ng-click="app.printPreview()">Load</button>
+        <button class="no-print btn load" ng-click="app.printPreview()">Load</button>
       </div>
       <div id="print">
       </div>
