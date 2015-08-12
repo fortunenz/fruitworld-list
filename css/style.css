@@ -57,12 +57,12 @@
   width: 100%;
 }
 
-h1, h2, h3 {
-  text-align: center;
-}
-
 html {
   font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  text-align: center;
 }
 
 h1 {
@@ -79,6 +79,14 @@ h2, h3 {
   margin-top: 10px;
   height: 50px;
   width: 50px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul:hover {
+  cursor: pointer;
 }
 
 .item {

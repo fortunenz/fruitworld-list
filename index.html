@@ -9,7 +9,7 @@
     <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
-    <script src="bower_components\jquery-2.1.4.min\jquery-2.1.4.min.js"></script>
+    <script src="bower_components/jquery-2.1.4.min/jquery-2.1.4.min.js"></script>
     <script src="js/onLoad.js"></script>
     <script src="js/buildTable.js"></script>
     <script src="js/angular.min.js"></script>
@@ -21,8 +21,9 @@
     <div class="row">
       <img class="no-print col-2 logo"src="images/logo.png">
       <h1 class="no-print col-10">Fruit World Checklist</h1>
+      <button class="no-print col-12" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
     </div>
-    <button class="no-print" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
+
     <div class="no-print" ng-show="app.viewOrder.bool">
       <nav>
         <ul>
@@ -51,10 +52,12 @@
       <div ng-show="app.selectedBranch.selected" id="loadedOrders">
       </div>
     </div>
+
     <div ng-show="!app.viewOrder.bool">
       <h2 class="no-print" >Choose the shops to print</h3>
       <div class="no-print" ng-repeat="shop in app.shops">
-        <input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}<br>
+        <label><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
+        <br>
       </div>
       <button class="no-print" ng-click="app.printPreview()">Load</button>
       <div id="print">
