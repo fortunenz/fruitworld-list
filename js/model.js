@@ -376,8 +376,8 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "FW375",
-      "description": "Foodwrap (375mm x 1200m)",
+      "code": "FWM",
+      "description": "Foodwrap (Medium)",
       "unit": "Roll",
       "packaging": "2 rolls/ctn",
       "orderAs": "roll",
