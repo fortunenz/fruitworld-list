@@ -127,12 +127,12 @@ li {
 }
 
 .btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #a6a6a6;
+  background-image: -webkit-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -moz-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -ms-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -o-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: linear-gradient(to bottom, #a6a6a6, #4a4a4a);
   -webkit-border-radius: 29;
   -moz-border-radius: 29;
   border-radius: 29px;
@@ -145,22 +145,22 @@ li {
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #c2c2c2;
+  background-image: -webkit-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -moz-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -ms-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -o-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: linear-gradient(to bottom, #c2c2c2, #a6a6a6);
   text-decoration: none;
 }
 
 .btnShops {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #a6a6a6;
+  background-image: -webkit-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -moz-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -ms-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: -o-linear-gradient(top, #a6a6a6, #4a4a4a);
+  background-image: linear-gradient(to bottom, #a6a6a6, #4a4a4a);
   -webkit-border-radius: 29;
   -moz-border-radius: 29;
   border-radius: 29px;
@@ -173,12 +173,12 @@ li {
 }
 
 .btnShops:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #c2c2c2;
+  background-image: -webkit-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -moz-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -ms-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: -o-linear-gradient(top, #c2c2c2, #a6a6a6);
+  background-image: linear-gradient(to bottom, #c2c2c2, #a6a6a6);
   text-decoration: none;
 }
 

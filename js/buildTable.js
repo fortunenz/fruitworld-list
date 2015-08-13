@@ -25,57 +25,59 @@ var buildPackingSlips = function(spreadsheetArray) {
   $("#packingSlip").empty();
   var packingSlip;
   for (i = 0; i < spreadsheetArray.length; i++) {
-    packingSlip = "";
-    packingSlip += '<div class="packingSlips">';
-    // Header
-    packingSlip += '<div class="row">';
-    packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
-    packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
-    packingSlip += '</div>';
-    // Left column of subheading
-    packingSlip += '<div class="row packingRow"><div class="col-6">';
-    packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
-    packingSlip += '<p class="packingP">PO Box 9511 New Market, Auckland</p>';
-    packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
-    // Right column of subheading
-    packingSlip += '<div class="col-6">';
-    packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
-    packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
-    packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
-    packingSlip += '</div>';
-    // Left side shop details
-    packingSlip += '<div class="row packingRow"><div class="col-6">';
-    packingSlip += '<p class="packingP">';
-    packingSlip += spreadsheetArray[i].attributes.name;
-    packingSlip += '</p>';
-    packingSlip += '<p class="packingP">';
-    packingSlip += spreadsheetArray[i].attributes.address;
-    packingSlip += '</p>';
-    packingSlip += '<p class="packingP">';
-    packingSlip += spreadsheetArray[i].attributes.city;
-    packingSlip += '</p></div>';
-    // Right side date + packing slip number
-    packingSlip += '<div class="col-6">';
-    packingSlip += '<p class="packingP">Account no.: ';
-    packingSlip += spreadsheetArray[i].attributes.acc;
-    packingSlip += '</p>';
-    packingSlip += '<p class="packingP">Packing slip no.: XXXXXXX</p>';
-    packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
-    packingSlip += '</div></div>';
-    // Item details with table
-    var table = '';
+    for (j = 0; j < 2; j++) {
+      packingSlip = "";
+      packingSlip += '<div class="packingSlips">';
+      // Header
+      packingSlip += '<div class="row">';
+      packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
+      packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
+      packingSlip += '</div>';
+      // Left column of subheading
+      packingSlip += '<div class="row packingRow"><div class="col-6">';
+      packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
+      packingSlip += '<p class="packingP">PO Box 9511 New Market, Auckland</p>';
+      packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
+      // Right column of subheading
+      packingSlip += '<div class="col-6">';
+      packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
+      packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
+      packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
+      packingSlip += '</div>';
+      // Left side shop details
+      packingSlip += '<div class="row packingRow"><div class="col-6">';
+      packingSlip += '<p class="packingP">';
+      packingSlip += spreadsheetArray[i].attributes.name;
+      packingSlip += '</p>';
+      packingSlip += '<p class="packingP">';
+      packingSlip += spreadsheetArray[i].attributes.address;
+      packingSlip += '</p>';
+      packingSlip += '<p class="packingP">';
+      packingSlip += spreadsheetArray[i].attributes.city;
+      packingSlip += '</p></div>';
+      // Right side date + packing slip number
+      packingSlip += '<div class="col-6">';
+      packingSlip += '<p class="packingP">Account no.: ';
+      packingSlip += spreadsheetArray[i].attributes.acc;
+      packingSlip += '</p>';
+      packingSlip += '<p class="packingP">Packing slip no.: XXXXXXX</p>';
+      packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
+      packingSlip += '</div></div>';
+      // Item details with table
+      var table = '';
 
-    table += '<table class="packingTable"><tr><th>Code</th><th>Description</th><th>Packaging</th><th>Quantity</th><th>Carton</th></tr>';
-    table += buildPackingRow(spreadsheetArray[i]);
-    table += '</table>';
+      table += '<table class="packingTable"><tr><th>Code</th><th>Description</th><th>Packaging</th><th>Quantity</th><th>Carton</th></tr>';
+      table += buildPackingRow(spreadsheetArray[i]);
+      table += '</table>';
 
-    packingSlip += table;
-    // Name and signature
-    packingSlip += '<div class="packingSign">';
-    packingSlip += '<p>Name: _________________________________</p>';
-    packingSlip += '<p>Signature: _____________________________</p>';
+      packingSlip += table;
+      // Name and signature
+      packingSlip += '<div class="packingSign">';
+      packingSlip += '<p>Name: _________________________________</p>';
+      packingSlip += '<p>Signature: _____________________________</p>';
 
-    $("#packingSlip").append(packingSlip);
+      $("#packingSlip").append(packingSlip);
+    }
   }
 };
 
@@ -143,10 +145,6 @@ var buildPackingRow = function(spreadsheetArray) {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
         } else if (items[k].packaging.includes("2 rolls/ctn")) {
           table += (spreadsheetArray.attributes[items[k].code] / 2) + " big ctn";
-        } else if (items[k].code.includes("SEAL09") && spreadsheetArray.attributes[items[k].code] > 47 && (spreadsheetArray.attributes[items[k].code] / 48)%48 == 0 ) {
-          table += (spreadsheetArray.attributes[items[k].code] / 48) + " ctn";
-        } else if (items[k].code.includes("SEAL12") && spreadsheetArray.attributes[items[k].code] > 35 && (spreadsheetArray.attributes[items[k].code] / 36)%36 == 0 ) {
-          table += (spreadsheetArray.attributes[items[k].code] / 36) + " ctn";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
         }
