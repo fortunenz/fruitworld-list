@@ -92,7 +92,7 @@ var buildRow = function(spreadsheetArray) {
     }
 
     if (tempTotal > 0) {
-      table += "<tr><th>" + items[k].desription + "</th>";
+      table += "<tr><th>" + items[k].description + "</th>";
       for (i = 0, len = spreadsheetArray.length; i < len; i++) {
         table += "<td>";
         if (spreadsheetArray[i].attributes[items[k].code] > 0) {
@@ -111,6 +111,7 @@ var buildRow = function(spreadsheetArray) {
 var buildPackingRow = function(spreadsheetArray) {
   var table = "";
   var items = model.items;
+  var quantity = 0;
 
   for (k = 0; k < items.length; k++) {
     if (items[k].code in spreadsheetArray.attributes) {
@@ -119,20 +120,37 @@ var buildPackingRow = function(spreadsheetArray) {
         table += items[k].code;
         table += '</td>';
         table += '<td>'
-        table += items[k].desription;
+        table += items[k].description;
         table += '</td>'
         table += '<td>'
         table += items[k].packaging;
         table += '</td>'
         table += '<td>'
 
-        if (items[k].unit == "Ctn" || items[k].unit == "Pack") {
-          table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+        if (items[k].unit == "1000") {
+          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          table += quantity + " pcs";
+        } else if (items[k].packaging.includes("4 rolls/ctn") && items[k].description.includes("bag")) {
+          table += (spreadsheetArray.attributes[items[k].code] * 4) + " roll";
+        } else {
+          table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
         }
 
         table += '</td>'
         table += '<td>'
-        table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+
+        if (items[k].unit == "box") {
+          table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
+        } else if (items[k].packaging.includes("2 rolls/ctn")) {
+          table += (spreadsheetArray.attributes[items[k].code] / 2) + " big ctn";
+        } else if (items[k].code.includes("SEAL09") && spreadsheetArray.attributes[items[k].code] > 47 && (spreadsheetArray.attributes[items[k].code] / 48)%48 == 0 ) {
+          table += (spreadsheetArray.attributes[items[k].code] / 48) + " ctn";
+        } else if (items[k].code.includes("SEAL12") && spreadsheetArray.attributes[items[k].code] > 35 && (spreadsheetArray.attributes[items[k].code] / 36)%36 == 0 ) {
+          table += (spreadsheetArray.attributes[items[k].code] / 36) + " ctn";
+        } else {
+          table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+        }
+
         table += '</td>';
         table += '</tr>';
       }

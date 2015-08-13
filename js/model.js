@@ -236,7 +236,7 @@ var model = {
   "items": [
     {
       "code": "FW001",
-      "desription": "Fruit World singlet bag (Large)",
+      "description": "Fruit World singlet bag (Large)",
       "unit": "1000",
       "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
@@ -245,7 +245,7 @@ var model = {
     },
     {
       "code": "FW002",
-      "desription": "Fruit World singlet bag (Small)",
+      "description": "Fruit World singlet bag (Small)",
       "unit": "1000",
       "quantity": 4000,
       "packaging": "4,000 pcs/ctn",
@@ -254,7 +254,7 @@ var model = {
     },
     {
       "code": "SINGN_M",
-      "desription": "Natural singlet bag (Medium)",
+      "description": "Natural singlet bag (Medium)",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
@@ -263,7 +263,7 @@ var model = {
     },
     {
       "code": "SING_M",
-      "desription": "White singlet bag (Medium)",
+      "description": "White singlet bag (Medium)",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
@@ -272,7 +272,7 @@ var model = {
     },
     {
       "code": "FW003",
-      "desription": "Fruit World roll bag (300x450mm) 3kg",
+      "description": "Fruit World roll bag (300x450mm) 3kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
@@ -280,7 +280,7 @@ var model = {
     },
     {
       "code": "ROLL05",
-      "desription": "Roll bag (300x450mm) 3kg",
+      "description": "Roll bag (300x450mm) 3kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
@@ -288,7 +288,7 @@ var model = {
     },
     {
       "code": "PRB01",
-      "desription": "Produce bag (150x300mm) 0.5kg",
+      "description": "Produce bag (150x300mm) 0.5kg",
       "unit": "1000",
       "quantity": 6000,
       "packaging": "6,000 pcs/ctn",
@@ -297,7 +297,7 @@ var model = {
     },
     {
       "code": "PRB02",
-      "desription": "Produce bag (200x375mm)",
+      "description": "Produce bag (200x375mm)",
       "unit": "1000",
       "quantity": 4000,
       "packaging": "4,000 pcs/ctn",
@@ -306,7 +306,7 @@ var model = {
     },
     {
       "code": "PRB03",
-      "desription": "Produce bag (200x300mm) 1.0kg",
+      "description": "Produce bag (200x300mm) 1.0kg",
       "unit": "1000",
       "quantity": 5000,
       "packaging": "5,000 pcs/ctn",
@@ -315,7 +315,7 @@ var model = {
     },
     {
       "code": "PRB04",
-      "desription": "Produce bag (225x375mm) 1.5kg",
+      "description": "Produce bag (225x375mm) 1.5kg",
       "unit": "1000",
       "quantity": 3500,
       "packaging": "3,500 pcs/ctn",
@@ -324,7 +324,7 @@ var model = {
     },
     {
       "code": "PRB05",
-      "desription": "Produce bag (250x425mm) 2.0kg",
+      "description": "Produce bag (250x425mm) 2.0kg",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
@@ -333,7 +333,7 @@ var model = {
     },
     {
       "code": "PRB06",
-      "desription": "Produce bag (250x500mm) 3.0kg",
+      "description": "Produce bag (250x500mm) 3.0kg",
       "unit": "1000",
       "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
@@ -342,7 +342,7 @@ var model = {
     },
     {
       "code": "PRB07",
-      "desription": "Produce bag (300x350mm) Spinach",
+      "description": "Produce bag (300x350mm) Spinach",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
@@ -351,7 +351,7 @@ var model = {
     },
     {
       "code": "POTA01",
-      "desription": "Potato bag 3.0kg",
+      "description": "Potato bag 3.0kg",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -360,7 +360,7 @@ var model = {
     },
     {
       "code": "POTA02",
-      "desription": "Potato bag 5.0kg",
+      "description": "Potato bag 5.0kg",
       "unit": "1000",
       "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
@@ -369,7 +369,7 @@ var model = {
     },
     {
       "code": "MUSH01",
-      "desription": "Printed mushroom paper bag",
+      "description": "Printed mushroom paper bag",
       "unit": "Pack",
       "packaging": "500 pcs/pkt",
       "orderAs": "pack",
@@ -377,7 +377,7 @@ var model = {
     },
     {
       "code": "FW375",
-      "desription": "Foodwrap (375mm x 1200m)",
+      "description": "Foodwrap (375mm x 1200m)",
       "unit": "Roll",
       "packaging": "2 rolls/ctn",
       "orderAs": "roll",
@@ -385,7 +385,7 @@ var model = {
     },
     {
       "code": "FW450",
-      "desription": "Foodwrap (450mm x 1200m)",
+      "description": "Foodwrap (450mm x 1200m)",
       "unit": "Roll",
       "packaging": "2 rolls/ctn",
       "orderAs": "roll",
@@ -393,7 +393,7 @@ var model = {
     },
     {
       "code": "ONION01",
-      "desription": "Onion bag 2.0kg",
+      "description": "Onion bag 2.0kg",
       "unit": "1000",
       "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
@@ -402,7 +402,7 @@ var model = {
     },
     {
       "code": "FP55",
-      "desription": "Foam plate #55 White",
+      "description": "Foam plate #55 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -410,7 +410,7 @@ var model = {
     },
     {
       "code": "FP55B",
-      "desription": "Foam plate #55 Black",
+      "description": "Foam plate #55 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -418,7 +418,7 @@ var model = {
     },
     {
       "code": "FP57",
-      "desription": "Foam plate #57 White",
+      "description": "Foam plate #57 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -426,7 +426,7 @@ var model = {
     },
     {
       "code": "FP57B",
-      "desription": "Foam plate #57 Black",
+      "description": "Foam plate #57 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -434,7 +434,7 @@ var model = {
     },
     {
       "code": "FP58",
-      "desription": "Foam plate #58 White",
+      "description": "Foam plate #58 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -442,7 +442,7 @@ var model = {
     },
     {
       "code": "FP58B",
-      "desription": "Foam plate #58 Black",
+      "description": "Foam plate #58 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -450,7 +450,7 @@ var model = {
     },
     {
       "code": "FP59",
-      "desription": "Foam plate #59 White",
+      "description": "Foam plate #59 White",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -458,7 +458,7 @@ var model = {
     },
     {
       "code": "FP59B",
-      "desription": "Foam plate #59 Black",
+      "description": "Foam plate #59 Black",
       "unit": "Ctn",
       "packaging": "500 pcs/ctn",
       "orderAs": "ctn",
@@ -466,7 +466,7 @@ var model = {
     },
     {
       "code": "FP85",
-      "desription": "Foam plate #85 White",
+      "description": "Foam plate #85 White",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -474,7 +474,7 @@ var model = {
     },
     {
       "code": "FP85B",
-      "desription": "Foam plate #85 Black",
+      "description": "Foam plate #85 Black",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -482,7 +482,7 @@ var model = {
     },
     {
       "code": "FP86",
-      "desription": "Foam plate #86 White",
+      "description": "Foam plate #86 White",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -490,7 +490,7 @@ var model = {
     },
     {
       "code": "FP86B",
-      "desription": "Foam plate #86 Black",
+      "description": "Foam plate #86 Black",
       "unit": "Ctn",
       "packaging": "600 pcs/ctn",
       "orderAs": "ctn",
@@ -498,7 +498,7 @@ var model = {
     },
     {
       "code": "TP001",
-      "desription": "Toilet paper",
+      "description": "Toilet paper",
       "unit": "Bundl",
       "packaging": "100 rolls/bundl",
       "orderAs": "bundl",
@@ -506,7 +506,7 @@ var model = {
     },
     {
       "code": "NB405",
-      "desription": "Netlon bag (405mm) red",
+      "description": "Netlon bag (405mm) red",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -515,7 +515,7 @@ var model = {
     },
     {
       "code": "NB405Y",
-      "desription": "Netlon bag (405mm) yellow",
+      "description": "Netlon bag (405mm) yellow",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -524,7 +524,7 @@ var model = {
     },
     {
       "code": "NB505",
-      "desription": "Netlon bag (505mm) red",
+      "description": "Netlon bag (505mm) red",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -533,7 +533,7 @@ var model = {
     },
     {
       "code": "MUSH02",
-      "desription": "Mushroom plastic bag (175x300mm)",
+      "description": "Mushroom plastic bag (175x300mm)",
       "unit": "1000",
       "quantity": 5000,
       "packaging": "5,000 pcs/ctn",
@@ -542,7 +542,7 @@ var model = {
     },
     {
       "code": "MUSH03",
-      "desription": "Mushroom plastic bag (200x375mm)",
+      "description": "Mushroom plastic bag (200x375mm)",
       "unit": "1000",
       "quantity": 2500,
       "packaging": "2,500 pcs/ctn",
@@ -551,7 +551,7 @@ var model = {
     },
     {
       "code": "RE017",
-      "desription": "Resealable bag (200x255mm)",
+      "description": "Resealable bag (200x255mm)",
       "unit": "1000",
       "quantity": 250,
       "packaging": "250 pcs/box",
@@ -560,7 +560,7 @@ var model = {
     },
     {
       "code": "FORK",
-      "desription": "Plastic fork",
+      "description": "Plastic fork",
       "unit": "1000",
       "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
@@ -569,7 +569,7 @@ var model = {
     },
     {
       "code": "ROLL04",
-      "desription": "Roll bag (250x125x475mm) 5.0kg",
+      "description": "Roll bag (250x125x475mm) 5.0kg",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "ctn",
@@ -577,7 +577,7 @@ var model = {
     },
     {
       "code": "SEAL09R",
-      "desription": "Bag seal tape (9mm x 66m) red",
+      "description": "Bag seal tape (9mm x 66m) red",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -585,7 +585,7 @@ var model = {
     },
     {
       "code": "SEAL09G",
-      "desription": "Bag seal tape (9mm x 66m) green",
+      "description": "Bag seal tape (9mm x 66m) green",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -593,7 +593,7 @@ var model = {
     },
     {
       "code": "SEAL09C",
-      "desription": "Bag seal tape (9mm x 66m) clear",
+      "description": "Bag seal tape (9mm x 66m) clear",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -601,7 +601,7 @@ var model = {
     },
     {
       "code": "SEAL09BR",
-      "desription": "Bag seal tape (9mm x 66m) brown",
+      "description": "Bag seal tape (9mm x 66m) brown",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -609,7 +609,7 @@ var model = {
     },
     {
       "code": "SEAL09BL",
-      "desription": "Bag seal tape (9mm x 66m) black",
+      "description": "Bag seal tape (9mm x 66m) black",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -617,7 +617,7 @@ var model = {
     },
     {
       "code": "SEAL09W",
-      "desription": "Bag seal tape (9mm x 66m) white",
+      "description": "Bag seal tape (9mm x 66m) white",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -625,7 +625,7 @@ var model = {
     },
     {
       "code": "SEAL09B",
-      "desription": "Bag seal tape (9mm x 66m) blue",
+      "description": "Bag seal tape (9mm x 66m) blue",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -633,7 +633,7 @@ var model = {
     },
     {
       "code": "SEAL09Y",
-      "desription": "Bag seal tape (9mm x 66m) yellow",
+      "description": "Bag seal tape (9mm x 66m) yellow",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -641,7 +641,7 @@ var model = {
     },
     {
       "code": "SEAL09O",
-      "desription": "Bag seal tape (9mm x 66m) orange",
+      "description": "Bag seal tape (9mm x 66m) orange",
       "unit": "Roll",
       "packaging": "48 rolls/ctn",
       "orderAs": "roll",
@@ -649,7 +649,7 @@ var model = {
     },
     {
       "code": "SEAL12R",
-      "desription": "Bag seal tape (12mm x 66m) Red",
+      "description": "Bag seal tape (12mm x 66m) Red",
       "unit": "Roll",
       "packaging": "36 rolls/ctn",
       "orderAs": "roll",
@@ -657,7 +657,7 @@ var model = {
     },
     {
       "code": "SEAL12G",
-      "desription": "Bag seal tape (12mm x 66m) Green",
+      "description": "Bag seal tape (12mm x 66m) Green",
       "unit": "Roll",
       "packaging": "36 rolls/ctn",
       "orderAs": "roll",
@@ -665,7 +665,7 @@ var model = {
     },
     {
       "code": "PW002",
-      "desription": "Palletwrap",
+      "description": "Palletwrap",
       "unit": "Roll",
       "packaging": "4 rolls/ctn",
       "orderAs": "roll",
@@ -673,7 +673,7 @@ var model = {
     },
     {
       "code": "GLOVES01S",
-      "desription": "Vinyl gloves small",
+      "description": "Vinyl gloves small",
       "unit": "box",
       "packaging": "10 boxes/ctn",
       "orderAs": "box",
@@ -681,7 +681,7 @@ var model = {
     },
     {
       "code": "GLOVES01M",
-      "desription": "Vinyl gloves medium",
+      "description": "Vinyl gloves medium",
       "unit": "box",
       "packaging": "10 boxes/ctn",
       "orderAs": "box",
@@ -689,7 +689,7 @@ var model = {
     },
     {
       "code": "GLOVES01L",
-      "desription": "Vinyl gloves large",
+      "description": "Vinyl gloves large",
       "unit": "box",
       "packaging": "10 boxes/ctn",
       "orderAs": "box",
@@ -697,7 +697,7 @@ var model = {
     },
     {
       "code": "GLOVES01XL",
-      "desription": "Vinyl gloves extra large",
+      "description": "Vinyl gloves extra large",
       "unit": "box",
       "packaging": "10 boxes/ctn",
       "orderAs": "box",
