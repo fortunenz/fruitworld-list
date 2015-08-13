@@ -18,11 +18,9 @@
   </head>
   <body ng-controller="appCtrl as app">
     <div id="loading"></div>
-    <div class="row">
-      <img class="no-print col-2 logo"src="images/logo.png">
-      <h1 class="no-print col-10">Fruit World Checklist</h1>
-      <button class="no-print col-12 btn" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
-    </div>
+
+    <h1 class="no-print col-12"><img class="no-print logo"src="images/logo.png"> Fruit World Checklist</h1>
+    <button class="no-print col-12 btn" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
 
     <div class="no-print" ng-show="app.viewOrder.bool">
       <nav>
@@ -37,7 +35,7 @@
       </nav>
       <div>
         <form id="orderForm" ng-submit="app.saveOrder(app)">
-          <h2>Selected Branch</h2>
+          <h2>Selected Branch:</h2>
           <h3>{{app.selectedBranch.name}}</h3>
           <span ng-repeat="item in app.items" class="row item">
             <strong class="col-12">{{item.desription}}:</strong>
@@ -55,9 +53,11 @@
 
     <div ng-show="!app.viewOrder.bool">
       <h2 class="no-print chooseShopHeader">Choose the shops to print</h3>
-      <div class="no-print checkboxes" ng-repeat="shop in app.shops">
-        <label class="btnShops"><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
-        <br>
+      <div class="row">
+        <div class="no-print checkboxes" ng-repeat="shop in app.shops">
+          <label class="btnShops"><input type="checkbox" ng-click="app.selectPrint(shop)">{{shop.name}}</label>
+          <br>
+        </div>
       </div>
       <div class="center">
         <button class="no-print btn load" ng-click="app.printPreview()">Load</button>

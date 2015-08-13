@@ -66,6 +66,8 @@ h1, h2, h3 {
 }
 
 h1 {
+  position: relative;
+  top: -15px;
   font-family: 'Lora', serif;
   font-size: 160%;
 }
@@ -76,7 +78,8 @@ h2, h3 {
 }
 
 .logo {
-  margin-top: 10px;
+  position: relative;
+  top: 18px;
   height: 50px;
   width: 50px;
 }
@@ -137,6 +140,7 @@ li {
   font-size: 10px;
   padding: 5px 20px 6px 20px;
   text-decoration: none;
+  outline:none;
 }
 
 .btn:hover {
@@ -164,6 +168,7 @@ li {
   font-size: 15px;
   padding: 5px 20px 6px 20px;
   text-decoration: none;
+  outline:none;
 }
 
 .btnShops:hover {
@@ -199,9 +204,31 @@ table, th, td {
   text-align: center;
 }
 
+@media screen and (min-width: 1000px) {
+  .shopList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .btnShops {
+    margin-right: 5px;
+    width: 40%;
+  }
+
+  .checkboxes {
+    position: relative;
+    left: 20px;
+    width: 25%;
+  }
+}
+
 @media print {
   .no-print {
     display: none;
+  }
+
+  #print {
+    font-size: 10px;
   }
 
   @page {
