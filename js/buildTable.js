@@ -23,8 +23,9 @@ var buildTable = function(spreadsheetArray) {
 // to be printed
 var buildPackingSlips = function(spreadsheetArray) {
   $("#packingSlip").empty();
-  var packingSlip = "";
-  for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+  var packingSlip;
+  for (i = 0; i < spreadsheetArray.length; i++) {
+    packingSlip = "";
     packingSlip += '<div class="packingSlips">';
     // Header
     packingSlip += '<div class="row">';
@@ -125,14 +126,16 @@ var buildPackingRow = function(spreadsheetArray) {
         table += items[k].packaging;
         table += '</td>'
         table += '<td>'
-        table += '';
+
+        if (items[k].unit == "Ctn" || items[k].unit == "Pack") {
+          table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+        }
+
         table += '</td>'
         table += '<td>'
         table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
         table += '</td>';
         table += '</tr>';
-        console.log(items[k].desription);
-        console.log(spreadsheetArray.attributes[items[k].code]);
       }
     }
   }
