@@ -29,9 +29,9 @@ var buildPackingSlips = function(spreadsheetArray) {
   var OrderNumber = Parse.Object.extend("OrderNumber");
   var queryOrderNumber = new Parse.Query(OrderNumber);
   queryOrderNumber.exists("orderNumber");
+  queryOrderNumber.descending("updatedAt");
   queryOrderNumber.first({
     success: function(results) {
-      console.log(results);
       orderNum = results.attributes.orderNumber;
 
       for (i = 0; i < spreadsheetArray.length; i++) {
@@ -57,9 +57,9 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '</div>';
           // Left side shop details
           packingSlip += '<div class="row packingRow"><div class="col-6">';
-          packingSlip += '<p class="packingP">';
+          packingSlip += '<p class="packingP"><strong>';
           packingSlip += spreadsheetArray[i].attributes.name;
-          packingSlip += '</p>';
+          packingSlip += '</strong></p>';
           packingSlip += '<p class="packingP">';
           packingSlip += spreadsheetArray[i].attributes.address;
           packingSlip += '</p>';
@@ -163,10 +163,10 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '</td>'
         table += '<td>'
 
-        if (items[k].unit == "box") {
+        if (items[k].unit == "box" && items[k].odered%10 !== 0) {
+          table += ((spreadsheetArray.attributes[items[k].code]/10)-((spreadsheetArray.attributes[items[k].code]%10)/10)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
+        } else if (items[k].unit == "box") {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
-        } else if (items[k].packaging.includes("2 rolls/ctn")) {
-          table += (spreadsheetArray.attributes[items[k].code] / 2) + " big ctn";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
         }
