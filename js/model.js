@@ -3,6 +3,7 @@ var model = {
     {
       "name": "Supa Fruit Mart 1",
       "short": "Supa 1",
+      "acc": "348",
       "address": "169 Lake Road, Belmont",
       "city": "Auckland",
       "clicked": false
@@ -10,6 +11,7 @@ var model = {
     {
       "name": "Fruit World Rosedale",
       "short": "Rosedale",
+      "acc": "363",
       "address": "343 Albany Highway, Albany",
       "city": "Auckland",
       "clicked": false
@@ -17,6 +19,7 @@ var model = {
     {
       "name": "Supa Fruit Mart 3",
       "short": "Supa 3",
+      "acc": "396",
       "address": "41 Bute Road, Browns Bay",
       "city": "Auckland",
       "clicked": false
@@ -24,6 +27,7 @@ var model = {
     {
       "name": "Fruit World Kumeu",
       "short": "Kumeu",
+      "acc": "397",
       "address": "49-53 Main Road, Kumeu",
       "city": "Auckland",
       "clicked": false
@@ -31,6 +35,7 @@ var model = {
     {
       "name": "Fruit World Silverdale",
       "short": "S'dale",
+      "acc": "145",
       "address": "2200 East Coast Road, Silverdale",
       "city": "Auckland",
       "clicked": false
@@ -38,6 +43,7 @@ var model = {
     {
       "name": "Fruit World Albany",
       "short": "Albany",
+      "acc": "190",
       "address": "Shop 1, 50 Greville Road, Albany",
       "city": "Auckland",
       "clicked": false
@@ -45,6 +51,7 @@ var model = {
     {
       "name": "Fruit World Henderson",
       "short": "H'son",
+      "acc": "004",
       "address": "313 Lincoln Road, Henderson",
       "city": "Auckland",
       "clicked": false
@@ -52,6 +59,7 @@ var model = {
     {
       "name": "Fruit World New Lynn",
       "short": "N'lynn",
+      "acc": "007",
       "address": "10A Margan Avenue, New Lynn",
       "city": "Auckland",
       "clicked": false
@@ -59,6 +67,7 @@ var model = {
     {
       "name": "Fruit World Chatswood",
       "short": "Chatwd",
+      "acc": "241",
       "address": "174 Mokoia Road, Chatswood",
       "city": "Auckland",
       "clicked": false
@@ -66,6 +75,7 @@ var model = {
     {
       "name": "Fruit World Pioneer Plaza",
       "short": "P'plaza",
+      "acc": "276",
       "address": "Unit 1, 21-25 Catherine Street, Henderson",
       "city": "Auckland",
       "clicked": false
@@ -73,6 +83,7 @@ var model = {
     {
       "name": "Fruit World Whangaporaoa",
       "short": "Whanga",
+      "acc": "332",
       "address": "Unit T1, Karepiro corner, Whangaparaoa",
       "city": "Auckland",
       "clicked": false
@@ -80,6 +91,7 @@ var model = {
     {
       "name": "Supa Fruit Mart 5",
       "short": "Supa 5",
+      "acc": "356",
       "address": "1A Shakespeare Road, Milford",
       "city": "Auckland",
       "clicked": false
@@ -87,6 +99,7 @@ var model = {
     {
       "name": "Fruit World Hobsonville",
       "short": "Hobson",
+      "acc": "355",
       "address": "116 Hobsonville Road, Hobsonville",
       "city": "Auckland",
       "clicked": false
@@ -94,6 +107,7 @@ var model = {
     {
       "name": "Supa Fruit Mart 2",
       "short": "Supa 2",
+      "acc": "245",
       "address": "3/1-3 Rhone Avenue, Te Atatu North",
       "city": "Auckland",
       "clicked": false
@@ -101,6 +115,7 @@ var model = {
     {
       "name": "Supa Fruit Mart 4",
       "short": "Supa 4",
+      "acc": "505",
       "address": "100 Pah Road, Royal Oak",
       "city": "Auckland",
       "clicked": false
@@ -108,6 +123,7 @@ var model = {
     {
       "name": "Fresh World Mt Eden",
       "short": "Mt Eden",
+      "acc": "165",
       "address": "270 Dominion Road, Mt Eden",
       "city": "Auckland",
       "clicked": false
@@ -115,6 +131,7 @@ var model = {
     {
       "name": "Fruit World Greenlane",
       "short": "G'lane",
+      "acc": "236",
       "address": "1 Marewa Road, Greenlane",
       "city": "Auckland",
       "clicked": false
@@ -122,6 +139,7 @@ var model = {
     {
       "name": "Fruit World Mt Albert",
       "short": "Mt Albrt",
+      "acc": "174",
       "address": "955 New North Road, Mt Albert",
       "city": "Auckland",
       "clicked": false
@@ -129,6 +147,7 @@ var model = {
     {
       "name": "Fruit World Mt Roskill",
       "short": "Mt Rosk",
+      "acc": "233",
       "address": "30A Frost Road, Mt Roskill",
       "city": "Auckland",
       "clicked": false
@@ -136,6 +155,7 @@ var model = {
     {
       "name": "Fruit World Ponsonby",
       "short": "Pnsnby",
+      "acc": "180",
       "address": "Unit 4, 280 Richmond Road, Ponsonby",
       "city": "Auckland",
       "clicked": false
@@ -143,6 +163,7 @@ var model = {
     {
       "name": "Fruit World Takanini",
       "short": "Taka",
+      "acc": "243",
       "address": "230 Great South Road, Takanini",
       "city": "Auckland",
       "clicked": false
@@ -150,6 +171,7 @@ var model = {
     {
       "name": "Fruit World Botany",
       "short": "Botany",
+      "acc": "209",
       "address": "280 Botany Road, Botany Downs",
       "city": "Auckland",
       "clicked": false
@@ -157,6 +179,7 @@ var model = {
     {
       "name": "Fruit World Glen Innes",
       "short": "G'innes",
+      "acc": "002",
       "address": "185 Apirana Avenue, Glen Innes",
       "city": "Auckland",
       "clicked": false
@@ -164,6 +187,7 @@ var model = {
     {
       "name": "Fruit World Pakuranga",
       "short": "Pak",
+      "acc": "001",
       "address": "290 Ti Rakau Drive, Pakuranga",
       "city": "Auckland",
       "clicked": false
@@ -171,6 +195,7 @@ var model = {
     {
       "name": "Fruit World Pukekohe",
       "short": "Puke",
+      "acc": "187",
       "address": "2 Stadium Drive, Pukekohe",
       "city": "Auckland",
       "clicked": false
@@ -178,6 +203,7 @@ var model = {
     {
       "name": "Fruit World Dannemora",
       "short": "Danne",
+      "acc": "219",
       "address": "Unit 4, 345 Chapel Road, Dannemora",
       "city": "Auckland",
       "clicked": false
@@ -185,6 +211,7 @@ var model = {
     {
       "name": "Fruit World Howick",
       "short": "Howick",
+      "acc": "260",
       "address": "219 Moore Street, Howick",
       "city": "Auckland",
       "clicked": false
@@ -192,6 +219,7 @@ var model = {
     {
       "name": "Fruit World Mt Wellington",
       "short": "Mt Well",
+      "acc": "302",
       "address": "Shop 18, Mt Wellington Shopping Centre, Penrose",
       "city": "Auckland",
       "clicked": false
@@ -199,6 +227,7 @@ var model = {
     {
       "name": "Fruit World Hamilton",
       "short": "Hamilton",
+      "acc": "230",
       "address": "4 Enderley Avenue, 5 Cross Roads",
       "city": "Hamilton",
       "clicked": false
