@@ -3,146 +3,204 @@ var model = {
     {
       "name": "Supa Fruit Mart 1",
       "short": "Supa 1",
+      "address": "169 Lake Road, Belmont",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Rosedale",
       "short": "Rosedale",
+      "address": "343 Albany Highway, Albany",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 3",
       "short": "Supa 3",
+      "address": "41 Bute Road, Browns Bay",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Kumeu",
       "short": "Kumeu",
+      "address": "49-53 Main Road, Kumeu",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Silverdale",
       "short": "S'dale",
+      "address": "2200 East Coast Road, Silverdale",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Albany",
       "short": "Albany",
+      "address": "Shop 1, 50 Greville Road, Albany",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Henderson",
       "short": "H'son",
+      "address": "313 Lincoln Road, Henderson",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World New Lynn",
       "short": "N'lynn",
+      "address": "10A Margan Avenue, New Lynn",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Chatswood",
       "short": "Chatwd",
+      "address": "174 Mokoia Road, Chatswood",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Pioneer Plaza",
       "short": "P'plaza",
+      "address": "Unit 1, 21-25 Catherine Street, Henderson",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Whangaporaoa",
       "short": "Whanga",
+      "address": "Unit T1, Karepiro corner, Whangaparaoa",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 5",
       "short": "Supa 5",
+      "address": "1A Shakespeare Road, Milford",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Hobsonville",
       "short": "Hobson",
+      "address": "116 Hobsonville Road, Hobsonville",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 2",
       "short": "Supa 2",
+      "address": "3/1-3 Rhone Avenue, Te Atatu North",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Supa Fruit Mart 4",
       "short": "Supa 4",
+      "address": "100 Pah Road, Royal Oak",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fresh World Mt Eden",
       "short": "Mt Eden",
+      "address": "270 Dominion Road, Mt Eden",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Greenlane",
       "short": "G'lane",
+      "address": "1 Marewa Road, Greenlane",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Albert",
       "short": "Mt Albrt",
+      "address": "955 New North Road, Mt Albert",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Roskill",
       "short": "Mt Rosk",
+      "address": "30A Frost Road, Mt Roskill",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Ponsonby",
       "short": "Pnsnby",
+      "address": "Unit 4, 280 Richmond Road, Ponsonby",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Takanini",
       "short": "Taka",
+      "address": "230 Great South Road, Takanini",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Botany",
       "short": "Botany",
+      "address": "280 Botany Road, Botany Downs",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Glen Innes",
       "short": "G'innes",
+      "address": "185 Apirana Avenue, Glen Innes",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Pakuranga",
       "short": "Pak",
+      "address": "290 Ti Rakau Drive, Pakuranga",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Pukekohe",
       "short": "Puke",
+      "address": "2 Stadium Drive, Pukekohe",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Dannemora",
       "short": "Danne",
+      "address": "Unit 4, 345 Chapel Road, Dannemora",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Howick",
       "short": "Howick",
+      "address": "219 Moore Street, Howick",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Mt Wellington",
       "short": "Mt Well",
+      "address": "Shop 18, Mt Wellington Shopping Centre, Penrose",
+      "city": "Auckland",
       "clicked": false
     },
     {
       "name": "Fruit World Hamilton",
       "short": "Hamilton",
+      "address": "4 Enderley Avenue, 5 Cross Roads",
+      "city": "Hamilton",
       "clicked": false
     }
   ],
