@@ -107,7 +107,6 @@
         setTimeout(function() {
           $('#loading').hide();
           $scope.$apply();
-          console.log(spreadsheetArray);
           buildTable(spreadsheetArray);
           buildPackingSlips(spreadsheetArray);
           $("#printButton").empty();

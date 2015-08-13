@@ -24,61 +24,83 @@ var buildTable = function(spreadsheetArray) {
 var buildPackingSlips = function(spreadsheetArray) {
   $("#packingSlip").empty();
   var packingSlip;
-  for (i = 0; i < spreadsheetArray.length; i++) {
-    for (j = 0; j < 2; j++) {
-      packingSlip = "";
-      packingSlip += '<div class="packingSlips">';
-      // Header
-      packingSlip += '<div class="row">';
-      packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
-      packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
-      packingSlip += '</div>';
-      // Left column of subheading
-      packingSlip += '<div class="row packingRow"><div class="col-6">';
-      packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
-      packingSlip += '<p class="packingP">PO Box 9511 New Market, Auckland</p>';
-      packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
-      // Right column of subheading
-      packingSlip += '<div class="col-6">';
-      packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
-      packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
-      packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
-      packingSlip += '</div>';
-      // Left side shop details
-      packingSlip += '<div class="row packingRow"><div class="col-6">';
-      packingSlip += '<p class="packingP">';
-      packingSlip += spreadsheetArray[i].attributes.name;
-      packingSlip += '</p>';
-      packingSlip += '<p class="packingP">';
-      packingSlip += spreadsheetArray[i].attributes.address;
-      packingSlip += '</p>';
-      packingSlip += '<p class="packingP">';
-      packingSlip += spreadsheetArray[i].attributes.city;
-      packingSlip += '</p></div>';
-      // Right side date + packing slip number
-      packingSlip += '<div class="col-6">';
-      packingSlip += '<p class="packingP">Account no.: ';
-      packingSlip += spreadsheetArray[i].attributes.acc;
-      packingSlip += '</p>';
-      packingSlip += '<p class="packingP">Packing slip no.: XXXXXXX</p>';
-      packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
-      packingSlip += '</div></div>';
-      // Item details with table
-      var table = '';
+  var orderNum;
 
-      table += '<table class="packingTable"><tr><th>Code</th><th>Description</th><th>Packaging</th><th>Quantity</th><th>Carton</th></tr>';
-      table += buildPackingRow(spreadsheetArray[i]);
-      table += '</table>';
+  var OrderNumber = Parse.Object.extend("OrderNumber");
+  var queryOrderNumber = new Parse.Query(OrderNumber);
+  queryOrderNumber.exists("orderNumber");
+  queryOrderNumber.first({
+    success: function(results) {
+      console.log(results);
+      orderNum = results.attributes.orderNumber;
 
-      packingSlip += table;
-      // Name and signature
-      packingSlip += '<div class="packingSign">';
-      packingSlip += '<p>Name: _________________________________</p>';
-      packingSlip += '<p>Signature: _____________________________</p>';
+      for (i = 0; i < spreadsheetArray.length; i++) {
+        orderNum++;
+        for (j = 0; j < 2; j++) {
+          packingSlip = "";
+          packingSlip += '<div class="packingSlips">';
+          // Header
+          packingSlip += '<div class="row">';
+          packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
+          packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
+          packingSlip += '</div>';
+          // Left column of subheading
+          packingSlip += '<div class="row packingRow"><div class="col-6">';
+          packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
+          packingSlip += '<p class="packingP">PO Box 9511 New Market, Auckland</p>';
+          packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
+          // Right column of subheading
+          packingSlip += '<div class="col-6">';
+          packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
+          packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
+          packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
+          packingSlip += '</div>';
+          // Left side shop details
+          packingSlip += '<div class="row packingRow"><div class="col-6">';
+          packingSlip += '<p class="packingP">';
+          packingSlip += spreadsheetArray[i].attributes.name;
+          packingSlip += '</p>';
+          packingSlip += '<p class="packingP">';
+          packingSlip += spreadsheetArray[i].attributes.address;
+          packingSlip += '</p>';
+          packingSlip += '<p class="packingP">';
+          packingSlip += spreadsheetArray[i].attributes.city;
+          packingSlip += '</p></div>';
+          // Right side date + packing slip number
+          packingSlip += '<div class="col-6">';
+          packingSlip += '<p class="packingP">Account no.: ';
+          packingSlip += spreadsheetArray[i].attributes.acc;
+          packingSlip += '</p>';
+          packingSlip += '<p class="packingP">Packing slip no.: ';
+          packingSlip += orderNum;
+          packingSlip += '</p>';
+          packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
+          packingSlip += '</div></div>';
+          // Item details with table
+          var table = '';
 
-      $("#packingSlip").append(packingSlip);
+          table += '<table class="packingTable"><tr><th>Code</th><th>Description</th><th>Packaging</th><th>Quantity</th><th>Carton</th></tr>';
+          table += buildPackingRow(spreadsheetArray[i]);
+          table += '</table>';
+
+          packingSlip += table;
+          // Name and signature
+          packingSlip += '<div class="packingSign">';
+          packingSlip += '<p>Name: _________________________________</p>';
+          packingSlip += '<p>Signature: _____________________________</p>';
+
+          $("#packingSlip").append(packingSlip);
+        }
+      }
+      results.set("orderNumber", orderNum);
+      results.save();
+    },
+    error: function(object, error) {
+      // The object was not retrieved successfully.
+      // error is a Parse.Error with an error code and message.
+      console.log("Unable to get the current order number");
     }
-  }
+  });
 };
 
 // Builds all the rows
