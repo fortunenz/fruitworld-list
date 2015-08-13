@@ -15,6 +15,8 @@
     self.selectedBranch = {
       name: "",
       short: "",
+      address: "",
+      city: "",
       selected: false
     };
     self.viewList = false;
@@ -49,6 +51,8 @@
       self.showList();
       self.selectedBranch.name = data.name;
       self.selectedBranch.short = data.short;
+      self.selectedBranch.address = data.address;
+      self.selectedBranch.city = data.city;
       loadShopDataList(data, $compile, $scope);
       self.selectedBranch.selected = true;
     };
@@ -62,6 +66,8 @@
         saveShopData(data);
         self.selectedBranch.name = "";
         self.selectedBranch.short = "";
+        self.selectedBranch.address = "";
+        self.selectedBranch.city = "";
         self.selectedBranch.selected = false;
         $("#orderForm")[0].reset();
       }
@@ -130,6 +136,8 @@
     shopData = new ShopData();
     shopData.set("name", shop.selectedBranch.name);
     shopData.set("short", shop.selectedBranch.short);
+    shopData.set("address", shop.selectedBranch.address);
+    shopData.set("city", shop.selectedBranch.city);
     for (i = 0, len = shop.items.length; i < len; i++) {
       shopData.set(shop.items[i].code, parseInt(shop.items[i].ordered));
     }

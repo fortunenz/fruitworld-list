@@ -48,8 +48,12 @@ var buildPackingSlips = function(spreadsheetArray) {
     packingSlip += '<p class="packingP">';
     packingSlip += spreadsheetArray[i].attributes.name;
     packingSlip += '</p>';
-    packingSlip += '<p class="packingP"></p>';
-    packingSlip += '<p class="packingP"></p></div>';
+    packingSlip += '<p class="packingP">';
+    packingSlip += spreadsheetArray[i].attributes.address;
+    packingSlip += '</p>';
+    packingSlip += '<p class="packingP">';
+    packingSlip += spreadsheetArray[i].attributes.city;
+    packingSlip += '</p>';
     // Right side date + packing slip number
     packingSlip += '<div class="col-6">';
     packingSlip += '<p class="packingP"></p>';
