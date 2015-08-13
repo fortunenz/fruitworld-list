@@ -238,6 +238,7 @@ var model = {
       "code": "FW001",
       "desription": "Fruit World singlet bag (Large)",
       "unit": "1000",
+      "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -246,6 +247,7 @@ var model = {
       "code": "FW002",
       "desription": "Fruit World singlet bag (Small)",
       "unit": "1000",
+      "quantity": 4000,
       "packaging": "4,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -254,6 +256,7 @@ var model = {
       "code": "SINGN_M",
       "desription": "Natural singlet bag (Medium)",
       "unit": "1000",
+      "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -262,6 +265,7 @@ var model = {
       "code": "SING_M",
       "desription": "White singlet bag (Medium)",
       "unit": "1000",
+      "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -286,6 +290,7 @@ var model = {
       "code": "PRB01",
       "desription": "Produce bag (150x300mm) 0.5kg",
       "unit": "1000",
+      "quantity": 6000,
       "packaging": "6,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -294,6 +299,7 @@ var model = {
       "code": "PRB02",
       "desription": "Produce bag (200x375mm)",
       "unit": "1000",
+      "quantity": 4000,
       "packaging": "4,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -302,6 +308,7 @@ var model = {
       "code": "PRB03",
       "desription": "Produce bag (200x300mm) 1.0kg",
       "unit": "1000",
+      "quantity": 5000,
       "packaging": "5,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -310,6 +317,7 @@ var model = {
       "code": "PRB04",
       "desription": "Produce bag (225x375mm) 1.5kg",
       "unit": "1000",
+      "quantity": 3500,
       "packaging": "3,500 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -318,6 +326,7 @@ var model = {
       "code": "PRB05",
       "desription": "Produce bag (250x425mm) 2.0kg",
       "unit": "1000",
+      "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -326,6 +335,7 @@ var model = {
       "code": "PRB06",
       "desription": "Produce bag (250x500mm) 3.0kg",
       "unit": "1000",
+      "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -334,6 +344,7 @@ var model = {
       "code": "PRB07",
       "desription": "Produce bag (300x350mm) Spinach",
       "unit": "1000",
+      "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -342,6 +353,7 @@ var model = {
       "code": "POTA01",
       "desription": "Potato bag 3.0kg",
       "unit": "1000",
+      "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -350,6 +362,7 @@ var model = {
       "code": "POTA02",
       "desription": "Potato bag 5.0kg",
       "unit": "1000",
+      "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -382,6 +395,7 @@ var model = {
       "code": "ONION01",
       "desription": "Onion bag 2.0kg",
       "unit": "1000",
+      "quantity": 3000,
       "packaging": "3,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -494,6 +508,7 @@ var model = {
       "code": "NB405",
       "desription": "Netlon bag (405mm) red",
       "unit": "1000",
+      "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -502,6 +517,7 @@ var model = {
       "code": "NB405Y",
       "desription": "Netlon bag (405mm) yellow",
       "unit": "1000",
+      "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -510,6 +526,7 @@ var model = {
       "code": "NB505",
       "desription": "Netlon bag (505mm) red",
       "unit": "1000",
+      "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -518,6 +535,7 @@ var model = {
       "code": "MUSH02",
       "desription": "Mushroom plastic bag (175x300mm)",
       "unit": "1000",
+      "quantity": 5000,
       "packaging": "5,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -526,6 +544,7 @@ var model = {
       "code": "MUSH03",
       "desription": "Mushroom plastic bag (200x375mm)",
       "unit": "1000",
+      "quantity": 2500,
       "packaging": "2,500 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
@@ -534,6 +553,7 @@ var model = {
       "code": "RE017",
       "desription": "Resealable bag (200x255mm)",
       "unit": "1000",
+      "quantity": 250,
       "packaging": "250 pcs/box",
       "orderAs": "box",
       "ordered": 0
@@ -542,6 +562,7 @@ var model = {
       "code": "FORK",
       "desription": "Plastic fork",
       "unit": "1000",
+      "quantity": 1000,
       "packaging": "1,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0

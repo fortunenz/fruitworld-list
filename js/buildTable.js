@@ -112,7 +112,6 @@ var buildPackingRow = function(spreadsheetArray) {
   var table = "";
   var items = model.items;
 
-  console.log(spreadsheetArray);
   for (k = 0; k < items.length; k++) {
     if (items[k].code in spreadsheetArray.attributes) {
       if (spreadsheetArray.attributes[items[k].code] > 0) {
