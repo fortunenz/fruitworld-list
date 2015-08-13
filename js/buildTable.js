@@ -22,7 +22,6 @@ var buildTable = function(spreadsheetArray) {
 // Loops through each shop in spreadsheet and builds a packing slip
 // to be printed
 var buildPackingSlips = function(spreadsheetArray) {
-  console.log(spreadsheetArray);
   $("#packingSlip").empty();
   var packingSlip = "";
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
@@ -53,19 +52,25 @@ var buildPackingSlips = function(spreadsheetArray) {
     packingSlip += '</p>';
     packingSlip += '<p class="packingP">';
     packingSlip += spreadsheetArray[i].attributes.city;
-    packingSlip += '</p>';
+    packingSlip += '</p></div>';
     // Right side date + packing slip number
     packingSlip += '<div class="col-6">';
-    packingSlip += '<p class="packingP"></p>';
-    packingSlip += '<p class="packingP"></p>';
-    packingSlip += '<p class="packingP"></p></div>';
-    packingSlip += '</div>';
-    // Description row
+    packingSlip += '<p class="packingP">Account no.: XXXXXXX</p>';
+    packingSlip += '<p class="packingP">Packing slip no.: XXXXXXX</p>';
+    packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
+    packingSlip += '</div></div>';
+    // Item details with table
+    var table = '';
 
-    // Item details
+    table += '<table class="packingTable"><tr><th>Code</th><th>Description</th><th>Packaging</th><th>Quantity</th><th>Carton</th></tr>';
+    table += buildPackingRow(spreadsheetArray[i]);
+    table += '</table>';
 
+    packingSlip += table;
     // Name and signature
-
+    packingSlip += '<div class="packingSign">';
+    packingSlip += '<p>Name: _________________________________</p>';
+    packingSlip += '<p>Signature: _____________________________</p>';
 
     $("#packingSlip").append(packingSlip);
   }
@@ -94,6 +99,23 @@ var buildRow = function(spreadsheetArray) {
       }
       table += "<td>" + tempTotal + "</td><td>" + items[k].orderAs + "</td>";
       table += "</tr>";
+    }
+  }
+
+  return table;
+};
+
+var buildPackingRow = function(spreadsheetArray) {
+  var table = "";
+  var items = model.items;
+
+  console.log(spreadsheetArray);
+  for (i = 0; i < spreadsheetArray.attributes.length; i++) {
+  for (k = 0; k < items.length; k++) {
+      if (spreadsheetArray.attributes[items[k].code] > 0) {
+        console.log(spreadsheetArray.attributes[items[k].code]);
+        table += spreadsheetArray.attributes[items[k].code];
+      }
     }
   }
 
