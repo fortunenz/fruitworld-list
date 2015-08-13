@@ -99,6 +99,7 @@
           $('#loading').hide();
           $scope.$apply();
           buildTable(spreadsheetArray);
+          buildPackingSlips(spreadsheetArray);
           $("#printButton").empty();
           $("#printButton").append('<button class="btn" onclick="window.print()">Print</button>');
         }, 2500);

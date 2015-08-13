@@ -61,11 +61,12 @@ html {
   font-family: 'Noto Sans', sans-serif;
 }
 
-h1, h2, h3 {
+h2, h3 {
   text-align: center;
 }
 
-h1 {
+.title {
+  text-align: center;
   position: relative;
   top: -15px;
   font-family: 'Lora', serif;
@@ -204,6 +205,31 @@ table, th, td {
   text-align: center;
 }
 
+/* Packing slip stylving */
+/*#packingSlip {
+  display: none;
+}*/
+
+.packingName {
+  text-align: right;
+}
+
+.packingTitle {
+  position: relative;
+  top: -15px;
+  font-family: 'Lora', serif;
+  font-size: 160%;
+}
+
+.packingRow {
+  margin-bottom: 20px;
+}
+
+.packingP {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 1000px) {
   .shopList {
     display: flex;
@@ -227,11 +253,15 @@ table, th, td {
     display: none;
   }
 
+  #packingSlip {
+    display: inline;
+  }
+
   #print {
     font-size: 10px;
   }
 
-  @page {
-    size: landscape
+  .packingSlips {
+    page-break-before: always;
   }
 }
