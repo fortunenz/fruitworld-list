@@ -86,10 +86,10 @@
         shop.clicked = true;
         self.printableShop.push(shop);
       } else {
-        shop.clicked = false;
         for (i = 0; i < self.printableShop.length; i++) {
           if (self.printableShop[i].name == shop.name) {
-            self.printableShop.pop(i);
+            shop.clicked = false;
+            self.printableShop.splice(i, 1);
           }
         }
       }
@@ -107,6 +107,7 @@
         setTimeout(function() {
           $('#loading').hide();
           $scope.$apply();
+          console.log(spreadsheetArray);
           buildTable(spreadsheetArray);
           buildPackingSlips(spreadsheetArray);
           $("#printButton").empty();
