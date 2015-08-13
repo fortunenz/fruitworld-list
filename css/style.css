@@ -236,6 +236,10 @@ table, th, td {
   width: 100%;
 }
 
+.packingSign {
+  margin-top: 20px;
+}
+
 @media screen and (min-width: 1000px) {
   .shopList {
     display: flex;

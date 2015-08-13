@@ -30,7 +30,7 @@ var buildPackingSlips = function(spreadsheetArray) {
     packingSlip += '<div class="row">';
     packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
     packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
-    packingSlip += '</div>'
+    packingSlip += '</div>';
     // Left column of subheading
     packingSlip += '<div class="row packingRow"><div class="col-6">';
     packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
@@ -55,7 +55,9 @@ var buildPackingSlips = function(spreadsheetArray) {
     packingSlip += '</p></div>';
     // Right side date + packing slip number
     packingSlip += '<div class="col-6">';
-    packingSlip += '<p class="packingP">Account no.: XXXXXXX</p>';
+    packingSlip += '<p class="packingP">Account no.: ';
+    packingSlip += spreadsheetArray[i].attributes.acc;
+    packingSlip += '</p>';
     packingSlip += '<p class="packingP">Packing slip no.: XXXXXXX</p>';
     packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
     packingSlip += '</div></div>';
@@ -110,11 +112,27 @@ var buildPackingRow = function(spreadsheetArray) {
   var items = model.items;
 
   console.log(spreadsheetArray);
-  for (i = 0; i < spreadsheetArray.attributes.length; i++) {
   for (k = 0; k < items.length; k++) {
+    if (items[k].code in spreadsheetArray.attributes) {
       if (spreadsheetArray.attributes[items[k].code] > 0) {
+        table += '<tr><td>';
+        table += items[k].code;
+        table += '</td>';
+        table += '<td>'
+        table += items[k].desription;
+        table += '</td>'
+        table += '<td>'
+        table += items[k].packaging;
+        table += '</td>'
+        table += '<td>'
+        table += '';
+        table += '</td>'
+        table += '<td>'
+        table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+        table += '</td>';
+        table += '</tr>';
+        console.log(items[k].desription);
         console.log(spreadsheetArray.attributes[items[k].code]);
-        table += spreadsheetArray.attributes[items[k].code];
       }
     }
   }
