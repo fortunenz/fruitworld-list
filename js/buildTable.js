@@ -163,7 +163,7 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '</td>'
         table += '<td>'
 
-        if (items[k].unit == "box" && items[k].odered%10 !== 0) {
+        if (items[k].code.includes("GLOVE") && spreadsheetArray.attributes[items[k]]%10 !== 0) {
           table += ((spreadsheetArray.attributes[items[k].code]/10)-((spreadsheetArray.attributes[items[k].code]%10)/10)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
         } else if (items[k].unit == "box") {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
