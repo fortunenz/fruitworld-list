@@ -211,7 +211,7 @@ table, th, td {
 
 /* Packing slip stylving */
 #packingSlip {
-  /*display: none;*/
+  display: none;
   margin-left: 40px;
   margin-right: 40px;
 }
