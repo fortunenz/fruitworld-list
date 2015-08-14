@@ -45,18 +45,20 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '<strong class="col-2 packingName">Packing Slip</strong>';
           packingSlip += '</div>';
           // Left column of subheading
-          packingSlip += '<div class="row packingRow"><div class="col-6">';
+          packingSlip += '<div class="row packingRow"><div class="col-8">';
           packingSlip += '<p class="packingP">73 Huia Road, Otahuhu, Auckland</p>';
           packingSlip += '<p class="packingP">PO Box 9511 New Market, Auckland</p>';
           packingSlip += '<p class="packingP">Email: <a href="#">feltd@xtra.co.nz</a></p></div>';
           // Right column of subheading
-          packingSlip += '<div class="col-6">';
+          packingSlip += '<div class="col-4">';
           packingSlip += '<p class="packingP right">Phone:    (09) 276-2681</p>';
           packingSlip += '<p class="packingP right">Fax:      (09) 276-2682</p>';
           packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
           packingSlip += '</div>';
           // Left side shop details
-          packingSlip += '<div class="row packingRow"><div class="col-6">';
+          //packingSlip += '<h1 style="text-align: center">Packing Slip</h1>'
+          packingSlip += '<div class="row packingRow"><div class="col-8">';
+          packingSlip += '<p class="packingP">Deliver to:</p>';
           packingSlip += '<p class="packingP"><strong>';
           packingSlip += spreadsheetArray[i].attributes.name;
           packingSlip += '</strong></p>';
@@ -67,12 +69,12 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += spreadsheetArray[i].attributes.city;
           packingSlip += '</p></div>';
           // Right side date + packing slip number
-          packingSlip += '<div class="col-6">';
-          packingSlip += '<p class="packingP">Account no.: ';
-          packingSlip += spreadsheetArray[i].attributes.acc;
-          packingSlip += '</p>';
+          packingSlip += '<div class="col-4">';
           packingSlip += '<p class="packingP">Packing slip no.: ';
           packingSlip += orderNum;
+          packingSlip += '</p>';
+          packingSlip += '<p class="packingP">Account no.: ';
+          packingSlip += spreadsheetArray[i].attributes.acc;
           packingSlip += '</p>';
           packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
           packingSlip += '</div></div>';
@@ -163,8 +165,12 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '</td>'
         table += '<td>'
 
-        if (items[k].code.includes("GLOVE") && spreadsheetArray.attributes[items[k]]%10 !== 0) {
-          table += ((spreadsheetArray.attributes[items[k].code]/10)-((spreadsheetArray.attributes[items[k].code]%10)/10)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
+        if (items[k].code.includes("GLOVE") && spreadsheetArray.attributes[items[k].code]%10 !== 0) {
+          if (spreadsheetArray.attributes[items[k].code] < 10) {
+            table += (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
+          } else {
+            table += ((spreadsheetArray.attributes[items[k].code]/10)-((spreadsheetArray.attributes[items[k].code]%10)/10)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
+          }
         } else if (items[k].unit == "box") {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
         } else {
