@@ -73,6 +73,9 @@
         self.selectedBranch.city = "";
         self.selectedBranch.selected = false;
         $("#orderForm")[0].reset();
+        for (i = 0, len = self.items.length; i < len; i++) {
+          self.items[i].ordered = 0;
+        }
       }
     };
 
@@ -119,6 +122,7 @@
         // array which will be used to build a spreadsheet
         for (i = 0, len = self.printableShop.length; i < len; i++) {
           query.equalTo("name", self.printableShop[i].name);
+          query.descending("createdAt");
           query.first({
             success: function(results) {
               spreadsheetArray.push(results);
@@ -145,7 +149,7 @@
     for (i = 0, len = shop.items.length; i < len; i++) {
       shopData.set(shop.items[i].code, parseInt(shop.items[i].ordered));
     }
-    shopData.save(null, {
+    shopData.save(null,{
       success: function(shopData) {
         console.log('New object created with objectId: ' + shopData.id);
       },
