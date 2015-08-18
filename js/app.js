@@ -76,6 +76,7 @@
         for (i = 0, len = self.items.length; i < len; i++) {
           self.items[i].ordered = 0;
         }
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
     };
 
