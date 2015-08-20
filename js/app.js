@@ -57,6 +57,7 @@
       self.selectedBranch.city = data.city;
       loadShopDataList(data, $compile, $scope);
       self.selectedBranch.selected = true;
+      $('html, body').animate({ scrollTop: 0 }, 'fast');
     };
 
     // Submit the order data to the server for later
