@@ -1,7 +1,6 @@
 // Function to build the table to be printed
 var buildTable = function(spreadsheetArray) {
   $("#print").empty();
-  var tempTotal;
 
   var table = "<table>";
   table += "<tr>";
@@ -145,13 +144,13 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '<tr><td>';
         table += items[k].code;
         table += '</td>';
-        table += '<td>'
+        table += '<td>';
         table += items[k].description;
-        table += '</td>'
-        table += '<td>'
+        table += '</td>';
+        table += '<td>';
         table += items[k].packaging;
-        table += '</td>'
-        table += '<td>'
+        table += '</td>';
+        table += '<td>';
 
         // Calculation for displaying correct quantities
         if (items[k].unit == "1000") {
@@ -179,7 +178,7 @@ var buildPackingRow = function(spreadsheetArray) {
           table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
         // Calculation for bag seal tape 9mmx66m
         } else if (items[k].code.includes("SEAL09")) {
-          if (spreadsheetArray.attributes[items[k].code]%48 == 0) {
+          if (spreadsheetArray.attributes[items[k].code]%48 === 0) {
             table += (spreadsheetArray.attributes[items[k].code] / 48) + " ctn";
           } else {
             if (spreadsheetArray.attributes[items[k].code] < 48) {
@@ -190,7 +189,7 @@ var buildPackingRow = function(spreadsheetArray) {
           }
         // Calculation for bag seal tape 12mmx66m
         } else if (items[k].code.includes("SEAL12")) {
-          if (spreadsheetArray.attributes[items[k].code]%36 == 0) {
+          if (spreadsheetArray.attributes[items[k].code]%36 === 0) {
             table += (spreadsheetArray.attributes[items[k].code] / 36) + " ctn";
           } else {
             if (spreadsheetArray.attributes[items[k].code] < 36) {
