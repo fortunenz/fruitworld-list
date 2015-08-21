@@ -154,6 +154,7 @@
     shopData.save(null,{
       success: function(shopData) {
         console.log('New object created with objectId: ' + shopData.id);
+        alert("Thanks, Your order has been saved for " + shopData.attributes.name + "!");
       },
       error: function(shopData, error) {
         // Execute any logic that should take place if the save fails.
