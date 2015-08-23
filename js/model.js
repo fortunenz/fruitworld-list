@@ -362,8 +362,8 @@ var model = {
       "code": "POTA01Y",
       "description": "Potato bag 3.0kg yellow",
       "unit": "1000",
-      "quantity": 1000,
-      "packaging": "1,000 pcs/ctn",
+      "quantity": 2000,
+      "packaging": "2,000 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
