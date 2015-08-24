@@ -87,7 +87,7 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += table;
           // Name and signature
           packingSlip += '<div class="packingSign">';
-          packingSlip += '<p>Name: _________________________________</p>';
+          packingSlip += '<p>Name: _________________________________</p><br>';
           packingSlip += '<p>Signature: _____________________________</p>';
 
           $("#packingSlip").append(packingSlip);
