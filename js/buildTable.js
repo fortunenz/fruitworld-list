@@ -25,6 +25,11 @@ var buildPackingSlips = function(spreadsheetArray) {
   var packingSlip;
   var orderNum;
 
+  // Formats date
+  var systemDate = new Date();
+  var tokens = systemDate.toString().split(" ");
+  var date = tokens[2] + " " + tokens[1] + " " + tokens[3];
+
   var OrderNumber = Parse.Object.extend("OrderNumber");
   var queryOrderNumber = new Parse.Query(OrderNumber);
   queryOrderNumber.exists("orderNumber");
@@ -75,7 +80,7 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '<p class="packingP">Account no.: ';
           packingSlip += spreadsheetArray[i].attributes.acc;
           packingSlip += '</p>';
-          packingSlip += '<p class="packingP">Date: ' + new Date().toJSON().slice(0,10) + '</p>';
+          packingSlip += '<p class="packingP">Date: ' + date + '</p>';
           packingSlip += '</div></div>';
           // Item details with table
           var table = '';
