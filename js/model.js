@@ -604,6 +604,15 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "RE010",
+      "description": "Resealable bag (130x200mm)",
+      "unit": "1000",
+      "quantity": 500,
+      "packaging": "500 pcs/box",
+      "orderAs": "box",
+      "ordered": 0
+    },
+    {
       "code": "RE017",
       "description": "Resealable bag (200x255mm)",
       "unit": "1000",
