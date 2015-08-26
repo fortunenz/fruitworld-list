@@ -810,6 +810,15 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "PPB001",
+      "description": "PP bag (150x250mm)",
+      "unit": "1000",
+      "quantity": 5000,
+      "packaging": "5,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "SOS37014",
       "description": "SOS bock bottom paper bag #37014",
       "unit": "Ctn",
