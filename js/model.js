@@ -595,58 +595,247 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "RE010",
-      "description": "Resealable bag (130x155mm)",
-      "unit": "1000",
-      "quantity": 500,
-      "packaging": "500 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE001",
+        "description": "Resealable bag (25x25mm) 40mu",
+        "unit": "1000",
+        "quantity": 50000,
+        "packaging": "50,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
-      "code": "RE010",
-      "description": "Resealable bag (130x200mm)",
-      "unit": "1000",
-      "quantity": 500,
-      "packaging": "500 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE002",
+        "description": "Resealable bag (50x50mm) 40mu",
+        "unit": "1000",
+        "quantity": 20000,
+        "packaging": "20,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
-      "code": "RE017",
-      "description": "Resealable bag (200x255mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE003",
+        "description": "Resealable bag (50x60mm) 40mu",
+        "unit": "1000",
+        "quantity": 20000,
+        "packaging": "20,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
-      "code": "RE018",
-      "description": "Resealable bag (255x355mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE004",
+        "description": "Resealable bag (50x75mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
-      "code": "RE019",
-      "description": "Resealable bag (305x380mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE005",
+        "description": "Resealable bag (62x75mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
-      "code": "RE020",
-      "description": "Resealable bag (305x440mm)",
-      "unit": "1000",
-      "quantity": 250,
-      "packaging": "250 pcs/box",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "RE006",
+        "description": "Resealable bag (75x100mm) 40mu",
+        "unit": "1000",
+        "quantity": 18000,
+        "packaging": "18,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE007",
+        "description": "Resealable bag (75x130mm) 40mu",
+        "unit": "1000",
+        "quantity": 16000,
+        "packaging": "16,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE008",
+        "description": "Resealable bag (100x130mm) 40mu",
+        "unit": "1000",
+        "quantity": 12000,
+        "packaging": "12,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE009",
+        "description": "Resealable bag (100x155mm) 40mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE010",
+        "description": "Resealable bag (130x155mm) 40mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE011",
+        "description": "Resealable bag (130x200mm) 40mu",
+        "unit": "1000",
+        "quantity": 6000,
+        "packaging": "6,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE012",
+        "description": "Resealable bag (155x180mm) 40mu",
+        "unit": "1000",
+        "quantity": 6000,
+        "packaging": "6,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE013",
+        "description": "Resealable bag (155x230mm) 40mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE014",
+        "description": "Resealable bag (180x255mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE015",
+        "description": "Resealable bag (195x195mm) 50mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE016",
+        "description": "Resealable bag (200x255mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE017",
+        "description": "Resealable bag (230x305mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE018",
+        "description": "Resealable bag (255x305mm) 50mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE019",
+        "description": "Resealable bag (255x355mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE020",
+        "description": "Resealable bag (330x330mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE021",
+        "description": "Resealable bag (305x380mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE022",
+        "description": "Resealable bag (305x440mm) 50mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE007H",
+        "description": "Resealable bag (75x130mm) 70mu",
+        "unit": "1000",
+        "quantity": 8000,
+        "packaging": "8,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE010H",
+        "description": "Resealable bag (130x155mm) 70mu",
+        "unit": "1000",
+        "quantity": 4000,
+        "packaging": "4,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE013H",
+        "description": "Resealable bag (155x230mm) 70mu",
+        "unit": "1000",
+        "quantity": 2000,
+        "packaging": "2,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE017H",
+        "description": "Resealable bag (230x305mm) 70mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
+    },
+    {
+        "code": "RE021H",
+        "description": "Resealable bag (305x380mm) 70mu",
+        "unit": "1000",
+        "quantity": 1000,
+        "packaging": "1,000 pcs/ctn",
+        "orderAs": "pcs",
+        "ordered": 0
     },
     {
       "code": "FORK",

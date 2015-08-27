@@ -26,6 +26,7 @@
       <nav>
         <ul>
           <li>
+            <input type="text" ng-model="app.searchBox" ng-keyup="app.search()" placeholder="Item search">
             <span ng-click="app.showList()" class="btn">Select branch</span>
             <ul class="shopList" ng-show="app.viewList">
               <li ng-repeat="shop in app.shops" ng-click="app.listClick(shop)" class="btnShops">{{shop.name}}</li>
@@ -37,7 +38,7 @@
         <form id="orderForm" ng-submit="app.saveOrder(app)">
           <h2>Selected Branch:</h2>
           <h3>{{app.selectedBranch.name}}</h3>
-          <span ng-repeat="item in app.items" class="row item">
+          <span ng-repeat="item in app.displayedItems" class="row item">
             <strong class="col-12">{{item.description}}:</strong>
             <input ng-model="item.ordered" type="number" value="0" step="0.01" min="0" class="col-7" onclick="this.select()">
             <label class="col-4">
