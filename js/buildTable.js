@@ -216,6 +216,9 @@ var buildPackingRow = function(spreadsheetArray) {
               table += ((spreadsheetArray.attributes[items[k].code]/items[k].quantity)-((spreadsheetArray.attributes[items[k].code]%items[k].quantity)/items[k].quantity)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % items[k].quantity)+ " pcs";
             }
           }
+        } else if (items[k].orderAs == "1000") {
+          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          table += quantity + " pcs";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
         }

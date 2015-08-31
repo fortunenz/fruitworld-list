@@ -1032,11 +1032,47 @@ var model = {
     },
     {
       "code": "PPB001",
+      "description": "PP bag (100x160mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB002",
+      "description": "PP bag (120x140mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB003",
+      "description": "PP bag (140x160mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB004",
+      "description": "PP bag (130x220mm)",
+      "unit": "1000",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
+      "ordered": 0
+    },
+    {
+      "code": "PPB005",
       "description": "PP bag (150x250mm)",
       "unit": "1000",
-      "quantity": 5000,
-      "packaging": "5,000 pcs/ctn",
-      "orderAs": "ctn",
+      "quantity": 1000,
+      "packaging": "",
+      "orderAs": "1000",
       "ordered": 0
     },
     {
