@@ -159,12 +159,19 @@ var buildPackingRow = function(spreadsheetArray) {
 
         // Logic for displaying correct quantities
         if (items[k].code.includes("RE")) {
-          table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
+          table += insertComma(spreadsheetArray.attributes[items[k].code].toString()) + " " + items[k].orderAs;
         } else if (items[k].unit == "1000") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
-          table += quantity + " pcs";
-        } else if (items[k].packaging.includes("4 rolls/ctn") && items[k].description.includes("bag")) {
-          table += (spreadsheetArray.attributes[items[k].code] * 4) + " roll";
+
+          // Checks if it's a set item or just normal pcs
+          if (item[k].orderAs == "ctn+ctn") {
+            table += insertComma(quantity.toString()) + " sets";
+          } else {
+            table += insertComma(quantity.toString()) + " pcs";
+          }
+        } else if (tempItem.unit == "Roll" && tempItem.orderAs == "ctn") {
+          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          table += insertComma(quantity.toString()) + " rolls";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
         }
@@ -208,16 +215,16 @@ var buildPackingRow = function(spreadsheetArray) {
         // Logic for resealable bags
         } else if (items[k].code.includes("RE")) {
           if (spreadsheetArray.attributes[items[k].code] < items[k].quantity) {
-            table += spreadsheetArray.attributes[items[k].code] + " pcs";
+            table += insertComma(spreadsheetArray.attributes[items[k].code].toString()) + " pcs";
           } else {
             if (spreadsheetArray.attributes[items[k].code]%items[k].quantity === 0) {
               table += (spreadsheetArray.attributes[items[k].code] / items[k].quantity) + " ctn";
             } else {
-              table += ((spreadsheetArray.attributes[items[k].code]/items[k].quantity)-((spreadsheetArray.attributes[items[k].code]%items[k].quantity)/items[k].quantity)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % items[k].quantity)+ " pcs";
+              table += ((spreadsheetArray.attributes[items[k].code]/items[k].quantity)-((spreadsheetArray.attributes[items[k].code]%items[k].quantity)/items[k].quantity)) + " ctn + " + insertComma((spreadsheetArray.attributes[items[k].code] % items[k].quantity).toString())+ " pcs";
             }
           }
         } else if (items[k].orderAs == "1000") {
-          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          quantity =  insertComma(spreadsheetArray.attributes[items[k].code].toString()) * items[k].quantity;
           table += quantity + " pcs";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
@@ -230,4 +237,16 @@ var buildPackingRow = function(spreadsheetArray) {
   }
 
   return table;
+};
+
+var insertComma = function(number) {
+  if (number.length < 4) {
+    return number;
+  } else if (number.length > 6) {
+    number = number.slice(0,number.length-6) + "," + number.slice(number.length-6, number.length-3) + "," + number.slice(number.length-3);
+    return number;
+  } else {
+    number = number.slice(0,number.length-3) + "," + number.slice(number.length-3);
+    return number;
+  }
 };
