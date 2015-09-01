@@ -159,17 +159,18 @@ var buildPackingRow = function(spreadsheetArray) {
 
         // Logic for displaying correct quantities
         if (items[k].code.includes("RE")) {
-          table += insertComma(spreadsheetArray.attributes[items[k].code].toString()) + " " + items[k].orderAs;
+          var reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
+          table += insertComma(reQuantitiy.toString()) + " pcs";
         } else if (items[k].unit == "1000") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
 
           // Checks if it's a set item or just normal pcs
-          if (item[k].orderAs == "ctn+ctn") {
+          if (items[k].orderAs == "ctn+ctn") {
             table += insertComma(quantity.toString()) + " sets";
           } else {
             table += insertComma(quantity.toString()) + " pcs";
           }
-        } else if (tempItem.unit == "Roll" && tempItem.orderAs == "ctn") {
+        } else if (items[k].unit == "Roll" && items[k].orderAs == "ctn") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
           table += insertComma(quantity.toString()) + " rolls";
         } else {
@@ -214,13 +215,13 @@ var buildPackingRow = function(spreadsheetArray) {
           }
         // Logic for resealable bags
         } else if (items[k].code.includes("RE")) {
-          if (spreadsheetArray.attributes[items[k].code] < items[k].quantity) {
-            table += insertComma(spreadsheetArray.attributes[items[k].code].toString()) + " pcs";
+          if (reQuantitiy < items[k].quantity) {
+            table += insertComma(reQuantitiy.toString()) + " pcs";
           } else {
-            if (spreadsheetArray.attributes[items[k].code]%items[k].quantity === 0) {
-              table += (spreadsheetArray.attributes[items[k].code] / items[k].quantity) + " ctn";
+            if (reQuantitiy%items[k].quantity === 0) {
+              table += (reQuantitiy / items[k].quantity) + " ctn";
             } else {
-              table += ((spreadsheetArray.attributes[items[k].code]/items[k].quantity)-((spreadsheetArray.attributes[items[k].code]%items[k].quantity)/items[k].quantity)) + " ctn + " + insertComma((spreadsheetArray.attributes[items[k].code] % items[k].quantity).toString())+ " pcs";
+              table += ((reQuantitiy/items[k].quantity)-((reQuantitiy%items[k].quantity)/items[k].quantity)) + " ctn + " + insertComma((reQuantitiy % items[k].quantity).toString())+ " pcs";
             }
           }
         } else if (items[k].orderAs == "1000") {
