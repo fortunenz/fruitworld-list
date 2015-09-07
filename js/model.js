@@ -1018,8 +1018,24 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "CHB01",
+      "description": "Checkout paper bag (Small)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "CHB02",
       "description": "Checkout paper bag (Medium)",
+      "unit": "Ctn",
+      "packaging": "250 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "CHB03",
+      "description": "Checkout paper bag (Large)",
       "unit": "Ctn",
       "packaging": "250 pcs/ctn",
       "orderAs": "ctn",
