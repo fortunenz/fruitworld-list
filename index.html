@@ -6,12 +6,10 @@
     <title>Fruit World Checklist</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="css/style.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <script src="https://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
     <script src="bower_components/jquery-2.1.4.min/jquery-2.1.4.min.js"></script>
-    <script src="js/onLoad.js"></script>
-    <script src="js/buildTable.js"></script>
+    <script src="js/onLoad.js" async></script>
+    <script src="js/buildTable.js" async></script>
     <script src="js/angular.min.js"></script>
     <script src="js/model.js"></script>
     <script src="js/app.js"></script>
@@ -44,8 +42,8 @@
             <input ng-model="item.ordered" type="number" value="0" min="0" class="col-7 itemInput" onclick="this.select()">
             <span class="col-4 itemIncrement">
               {{item.orderAs}}
-              <button type="button" ng-click="item.ordered = item.ordered+1">+</button>
-              <button type="button" ng-click="item.ordered = item.ordered-1">-</button>
+              <button type="button" class="clean-gray-btn clean-gray-btn-increment" ng-click="item.ordered = item.ordered+1; app.checkoutList()">+</button>
+              <button type="button" class="clean-gray-btn clean-gray-btn-increment" ng-click="item.ordered = item.ordered-1; app.checkoutList()">-</button>
             </span>
             <br>
           </span>
