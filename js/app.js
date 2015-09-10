@@ -132,7 +132,7 @@
           buildTable(spreadsheetArray);
           buildPackingSlips(spreadsheetArray);
           $("#printButton").empty();
-          $("#printButton").append('<button class="btn" onclick="window.print()">Print</button>');
+          $("#printButton").append('<button class="clean-gray-btn" onclick="window.print()">Print</button>');
         }, 2500);
 
         query.descending("updatedAt");
