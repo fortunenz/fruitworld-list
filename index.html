@@ -39,7 +39,7 @@
         <form id="orderForm" class="row" ng-submit="app.saveOrder(app)">
           <span ng-repeat="item in app.displayedItems" class="item col-12 row">
             <strong class="col-12">{{item.description}}:</strong>
-            <input ng-model="item.ordered" type="number" value="0" min="0" class="col-7 itemInput" onclick="this.select()">
+            <input ng-change="app.checkoutList()" ng-model="item.ordered" type="number" value="0" min="0" class="col-7" onclick="this.select()">
             <span class="col-4 itemIncrement">
               {{item.orderAs}}
               <button type="button" class="clean-gray-btn clean-gray-btn-increment" ng-click="item.ordered = item.ordered+1; app.checkoutList()">+</button>
@@ -54,6 +54,21 @@
       <h3 ng-show="app.selectedBranch.selected">Saved orders for {{app.selectedBranch.name}}</h3>
       <div ng-show="app.selectedBranch.selected" id="loadedOrders">
       </div>
+
+      <div id="checkout">
+        <div id="checkoutHeader">
+          <br>
+          <h2>Items</h2>
+          <hr>
+        </div>
+        <div id="checkoutItems">
+          <p ng-repeat="item in app.checkoutItems">
+            <strong>{{item.description}}:</strong><br>
+            {{item.ordered}} {{item.orderAs}}
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <div ng-show="!app.viewOrder.bool">

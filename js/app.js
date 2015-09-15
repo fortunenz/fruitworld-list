@@ -25,6 +25,7 @@
     self.viewList = false;
     self.printableShop = [];
     self.spreadsheetArray = [];
+    self.checkoutItems = [];
     self.shops = model.shops;
     self.items = model.items;
 
@@ -51,6 +52,23 @@
       } else {
         self.viewOrder.id = "Print";
         self.viewOrder.bool = true;
+      }
+    };
+
+    // Appends data to the checkout list
+    self.checkoutList = function() {
+      var temp;
+      for (i = 0, len = self.items.length; i < len; i++) {
+        temp = $.inArray(self.items[i], self.checkoutItems);
+        if (self.items[i].ordered > 0) {
+          if (temp === -1) {
+            self.checkoutItems.push(self.items[i]);
+          }
+        } else {
+          if (temp > -1) {
+            self.checkoutItems.splice(temp, 1);
+          }
+        }
       }
     };
 

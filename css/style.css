@@ -123,6 +123,7 @@ li {
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 4;
 }
 
 .clean-gray-btn {
@@ -213,6 +214,24 @@ table, th, td {
   text-align: center;
 }
 
+/* Styling the side panel showing shopping cart */
+#checkout {
+  display: none;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+#checkoutHeader {
+  height: 60px;
+}
+
+#checkoutItems {
+  overflow-y: auto;
+}
+
 /* Packing slip stylving */
 #packingSlip {
   display: none;
@@ -257,6 +276,11 @@ table, th, td {
     left: 12.5%;
     width: 80%;
     margin: 0 auto;
+  }
+
+  #checkout {
+    display: inline;
+    z-index: 3;
   }
 }
 
