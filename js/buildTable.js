@@ -2,7 +2,7 @@
 var buildTable = function(spreadsheetArray) {
   $("#print").empty();
 
-  var table = "<table>";
+  var table = "<br><table>";
   table += "<tr>";
   table += "<th></th>";
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
