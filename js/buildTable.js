@@ -24,6 +24,7 @@ var buildPackingSlips = function(spreadsheetArray) {
   $("#packingSlip").empty();
   var packingSlip;
   var orderNum;
+  var items = model.items;
 
   // Formats date
   var systemDate = new Date();
@@ -92,6 +93,7 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += table;
           // Name and signature
           packingSlip += '<div class="packingSign">';
+          packingSlip += '<br><br><br><br><br><br><br><br><br><br>';
           packingSlip += '<p>Name: _________________________________</p><br>';
           packingSlip += '<p>Signature: _____________________________</p>';
 
