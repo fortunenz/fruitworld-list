@@ -150,6 +150,7 @@
         for (i = 0, len = self.items.length; i < len; i++) {
           self.items[i].ordered = 0;
         }
+        self.checkoutItems = [];
         $('html, body').animate({ scrollTop: 0 }, 'fast');
       }
     };
