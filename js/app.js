@@ -223,7 +223,7 @@
     shopData.set("address", shop.selectedBranch.address);
     shopData.set("city", shop.selectedBranch.city);
     for (i = 0, len = shop.items.length; i < len; i++) {
-      shopData.set(shop.items[i].code, parseInt(shop.items[i].ordered));
+      shopData.set(shop.items[i].code, Number(shop.items[i].ordered));
     }
     shopData.save(null,{
       success: function(shopData) {

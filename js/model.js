@@ -954,36 +954,40 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "GLOVES01S",
-      "description": "Vinyl gloves small",
-      "unit": "box",
-      "packaging": "10 boxes/ctn",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "GLOVES01S",
+        "description": "Vinyl gloves small",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
     },
     {
-      "code": "GLOVES01M",
-      "description": "Vinyl gloves medium",
-      "unit": "box",
-      "packaging": "10 boxes/ctn",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "GLOVES01M",
+        "description": "Vinyl gloves medium",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
     },
     {
-      "code": "GLOVES01L",
-      "description": "Vinyl gloves large",
-      "unit": "box",
-      "packaging": "10 boxes/ctn",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "GLOVES01L",
+        "description": "Vinyl gloves large",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
     },
     {
-      "code": "GLOVES01XL",
-      "description": "Vinyl gloves extra large",
-      "unit": "box",
-      "packaging": "10 boxes/ctn",
-      "orderAs": "box",
-      "ordered": 0
+        "code": "GLOVES01XL",
+        "description": "Vinyl gloves extra large",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
     },
     {
       "code": "T2551",

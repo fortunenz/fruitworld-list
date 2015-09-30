@@ -160,6 +160,7 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '<td>';
 
         // Logic for displaying correct quantities
+
         if (items[k].code.includes("RE")) {
           var reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
           table += insertComma(reQuantitiy.toString()) + " pcs";
@@ -175,6 +176,9 @@ var buildPackingRow = function(spreadsheetArray) {
         } else if (items[k].unit == "Roll" && items[k].orderAs == "ctn") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
           table += insertComma(quantity.toString()) + " rolls";
+        } else if (items[k].unit == "Box" && items[k].orderAs == "ctn") {
+          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          table += insertComma(quantity.toString()) + " boxes";
         } else {
           table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
         }
@@ -185,24 +189,13 @@ var buildPackingRow = function(spreadsheetArray) {
         // Logic for displaying correct carton values
 
         // Logic for gloves
-        if (items[k].code.includes("GLOVE") && spreadsheetArray.attributes[items[k].code]%10 !== 0) {
-          if (spreadsheetArray.attributes[items[k].code] < 10) {
-            table += (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
+        if (items[k].code.includes("GLOVE")) {
+          if (spreadsheetArray.attributes[items[k].code] < 1) {
+            table += (spreadsheetArray.attributes[items[k].code] * 10)+ " boxes";
+          } else if (spreadsheetArray.attributes[items[k].code].toString().includes(".")){
+            table += parseInt(spreadsheetArray.attributes[items[k].code]-(spreadsheetArray.attributes[items[k].code]%1)) + " ctn + " + parseInt((spreadsheetArray.attributes[items[k].code]*10)-((spreadsheetArray.attributes[items[k].code]-(spreadsheetArray.attributes[items[k].code]%1))*10))+ " boxes";
           } else {
-            table += ((spreadsheetArray.attributes[items[k].code]/10)-((spreadsheetArray.attributes[items[k].code]%10)/10)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 10)+ " boxes";
-          }
-        } else if (items[k].unit == "box") {
-          table += (spreadsheetArray.attributes[items[k].code] / 10) + " ctn";
-        // Logic for bag seal tape 9mmx66m
-        } else if (items[k].code.includes("SEAL09")) {
-          if (spreadsheetArray.attributes[items[k].code]%48 === 0) {
-            table += (spreadsheetArray.attributes[items[k].code] / 48) + " ctn";
-          } else {
-            if (spreadsheetArray.attributes[items[k].code] < 48) {
-              table += spreadsheetArray.attributes[items[k].code] + " rolls";
-            } else {
-              table += ((spreadsheetArray.attributes[items[k].code]/48)-((spreadsheetArray.attributes[items[k].code]%48)/48)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 48)+ " rolls";
-            }
+            table += spreadsheetArray.attributes[items[k].code] + " ctn";
           }
         // Logic for bag seal tape 12mmx66m
         } else if (items[k].code.includes("SEAL12")) {
