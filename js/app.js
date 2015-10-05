@@ -114,8 +114,10 @@
     self.showList = function() {
       if (self.viewList === false) {
         self.viewList = true;
+        $("#loadedOrders").css("display", "none");
       } else {
         self.viewList = false;
+        $("#loadedOrders").css("display", "inline");
       }
     };
 
@@ -266,6 +268,8 @@
     query.find({
       success: function(results) {
         var temp;
+        temp = '<h3 ng-show="app.selectedBranch.selected">Saved orders for ' + shop.name + '</h3>';
+        $("#loadedOrders").append(temp);
         for (i = 0, len = results.length; i < len; i++) {
           temp = '<div class="oldOrders" ng-click="app.loadOrder(' +
             i +

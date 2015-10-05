@@ -410,6 +410,7 @@ table, th, td {
     position: fixed;
     width: 20%;
     top: 80px;
+    overflow-y: auto;
   }
 
   #checkout {
