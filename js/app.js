@@ -115,9 +115,13 @@
       if (self.viewList === false) {
         self.viewList = true;
         $("#loadedOrders").css("display", "none");
+        $("#checkout").css("display", "none");
       } else {
         self.viewList = false;
         $("#loadedOrders").css("display", "inline");
+        if (window.innerWidth > 1000) {
+          $("#checkout").css("display", "inline");
+        }
       }
     };
 
@@ -271,11 +275,11 @@
         temp = '<h3 ng-show="app.selectedBranch.selected">Saved orders for ' + shop.name + '</h3>';
         $("#loadedOrders").append(temp);
         for (i = 0, len = results.length; i < len; i++) {
-          temp = '<div class="oldOrders" ng-click="app.loadOrder(' +
-            i +
-            ')"><p>File last modified: ' +
+          temp = '<div class="oldOrders"><p>File last modified: ' +
             results[i].updatedAt +
-            '</p></div>';
+            ' <button class="clean-gray-btn" ng-click="app.loadOrder(' +
+              i +
+              ')">Load</button></p></div>';
           angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope));
         }
       },
