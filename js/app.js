@@ -146,7 +146,6 @@
         self.selectedBranch.address = "";
         self.selectedBranch.city = "";
         self.selectedBranch.selected = false;
-        $("#orderForm")[0].reset();
         for (i = 0, len = self.items.length; i < len; i++) {
           self.items[i].ordered = 0;
         }
@@ -155,8 +154,27 @@
       }
     };
 
+    // Loads a previously saved order for user to modify and update
     self.loadOrder = function(location) {
-      console.log("Loads the previously saved values on the form");
+      query = new Parse.Query(ShopData);
+      query.equalTo("name", self.selectedBranch.name);
+      query.find({
+        success: function(results) {
+          var serverItems = results[location].attributes;
+          for (i = 0, len = self.items.length; i < len; i++) {
+            if (self.items[i].code in serverItems) {
+              self.items[i].ordered = serverItems[self.items[i].code];
+            }
+          }
+          self.checkoutList();
+          $scope.$apply();
+          $('html, body').animate({ scrollTop: 0 }, 'fast');
+          alert("Previous order for " + self.selectedBranch.name + " from " + results[location].updatedAt + " has been loaded");
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
     };
 
     // Add the shop to the print list if checkbox is checked
@@ -198,7 +216,7 @@
         // array which will be used to build a spreadsheet
         for (i = 0, len = self.printableShop.length; i < len; i++) {
           query.equalTo("name", self.printableShop[i].name);
-          query.descending("createdAt");
+          query.descending("updatedAt");
           query.first({
             success: function(results) {
               spreadsheetArray.push(results);
@@ -241,6 +259,7 @@
   // Helper method for loading all previously saved data
   var loadShopDataList = function(shop, compile, scope) {
     $("#loadedOrders").empty();
+    query = new Parse.Query(ShopData);
     query.equalTo("name", shop.name);
     query.limit(5);
     query.descending("updatedAt");

@@ -315,6 +315,11 @@ table, th, td {
   opacity: 1;
 }
 
+/* Previously saved orders */
+#loadedOrders {
+
+}
+
 /* Styling the side panel showing shopping cart */
 #checkout {
   display: none;
@@ -399,6 +404,12 @@ table, th, td {
     left: 12.5%;
     width: 80%;
     margin: 0 auto;
+  }
+
+  #loadedOrders {
+    position: fixed;
+    width: 20%;
+    top: 80px;
   }
 
   #checkout {
