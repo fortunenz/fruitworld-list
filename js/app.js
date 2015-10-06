@@ -119,7 +119,8 @@
       } else {
         self.viewList = false;
         $("#loadedOrders").css("display", "inline");
-        if (window.innerWidth > 1000) {
+        var mq = window.matchMedia( "(min-width: 1000px)" );
+        if (mq.matches) {
           $("#checkout").css("display", "inline");
         }
       }
