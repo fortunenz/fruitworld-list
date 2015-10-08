@@ -24,7 +24,6 @@ var buildPackingSlips = function(spreadsheetArray) {
   $("#packingSlip").empty();
   var packingSlip;
   var orderNum;
-  var items = model.items;
 
   // Formats date
   var systemDate = new Date();
@@ -160,9 +159,10 @@ var buildPackingRow = function(spreadsheetArray) {
         table += '<td>';
 
         // Logic for displaying correct quantities
+        var reQuantitiy;
 
         if (items[k].code.includes("RE")) {
-          var reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
+          reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
           table += insertComma(reQuantitiy.toString()) + " pcs";
         } else if (items[k].unit == "1000") {
           quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
@@ -183,8 +183,8 @@ var buildPackingRow = function(spreadsheetArray) {
           table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
         }
 
-        table += '</td>'
-        table += '<td>'
+        table += '</td>';
+        table += '<td>';
 
         // Logic for displaying correct carton values
 
