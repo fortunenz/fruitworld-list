@@ -35,13 +35,31 @@
       selected: false
     };
     self.searchBox = "";
-    self.displayedItems = model.items;
     self.viewList = false;
     self.printableShop = [];
     self.spreadsheetArray = [];
     self.checkoutItems = [];
-    self.shops = model.shops;
     self.items = model.items;
+    self.displayedItems = self.items;
+
+    // Pulls data from server for all fruit world customers
+    self.shops = [];
+    var shopQuery = new Parse.Query("Customers");
+    shopQuery.limit(1000);
+    shopQuery.containedIn("type", ["Fruit World", "Supa Fruit Mart"]);
+    shopQuery.find({
+      success: function(results) {
+        for (i = 0, len = results.length; i < len; i++) {
+          self.shops.push(results[i].attributes);
+        }
+        sortByKey(self.shops, "name");
+        $scope.$apply();
+      },
+      error: function(error) {
+        console.log("Error: " + error.code + " " + error.message);
+      }
+    });
+    //self.shops = model.shops;
 
     // Function to log the user in so they can use the program
     self.login = function() {
@@ -71,7 +89,7 @@
     // it will display the item
     self.search = function() {
       if (self.searchBox == " ") {
-        self.displayedItems = model.items;
+        self.displayedItems = self.items;
       } else {
         self.displayedItems = [];
         for (i = 0, len = self.items.length; i < len; i++) {
