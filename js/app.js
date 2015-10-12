@@ -9,6 +9,28 @@
   app.controller("appCtrl", function($scope, $compile) {
     var self = this;
 
+    // Defines the shops variable for the user to load later
+    self.shops = [];
+
+    // Pulls data from server for all fruit world customers
+    self.loadShops = function() {
+      var shopQuery = new Parse.Query("Customers");
+      shopQuery.limit(1000);
+      shopQuery.containedIn("type", ["Fruit World", "Supa Fruit Mart"]);
+      shopQuery.find({
+        success: function(results) {
+          for (i = 0, len = results.length; i < len; i++) {
+            self.shops.push(results[i].attributes);
+          }
+          sortByKey(self.shops, "name");
+          $scope.$apply();
+        },
+        error: function(error) {
+          console.log("Error: " + error.code + " " + error.message);
+        }
+      });
+    };
+
     // Login variables
     self.userName = "";
     self.password = "";
@@ -16,6 +38,7 @@
     if (currentUser) {
       self.access = true;
       self.name = currentUser.attributes.firstName;
+      self.loadShops();
     } else {
       self.access = false;
       self.name = "";
@@ -42,25 +65,6 @@
     self.items = model.items;
     self.displayedItems = self.items;
 
-    // Pulls data from server for all fruit world customers
-    self.shops = [];
-    var shopQuery = new Parse.Query("Customers");
-    shopQuery.limit(1000);
-    shopQuery.containedIn("type", ["Fruit World", "Supa Fruit Mart"]);
-    shopQuery.find({
-      success: function(results) {
-        for (i = 0, len = results.length; i < len; i++) {
-          self.shops.push(results[i].attributes);
-        }
-        sortByKey(self.shops, "name");
-        $scope.$apply();
-      },
-      error: function(error) {
-        console.log("Error: " + error.code + " " + error.message);
-      }
-    });
-    //self.shops = model.shops;
-
     // Function to log the user in so they can use the program
     self.login = function() {
       $("#loading").show();
@@ -69,7 +73,7 @@
           $("#loading").hide();
           self.name = user.attributes.firstName;
           self.access = true;
-          $scope.$apply();
+          self.loadShops();
         },
         error: function(user, error) {
           $("#loading").hide();
