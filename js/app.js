@@ -229,16 +229,6 @@
         $('#loading').show();
         var spreadsheetArray = [];
 
-        // Waits for ajax request to complete before building spreadsheet data
-        setTimeout(function() {
-          $('#loading').hide();
-          $scope.$apply();
-          buildTable(spreadsheetArray);
-          buildPackingSlips(spreadsheetArray);
-          $("#printButton").empty();
-          $("#printButton").append('<button class="clean-gray-btn" onclick="window.print()">Print</button>');
-        }, 2500);
-
         query.descending("updatedAt");
 
         // Gets all the data from the server and pushes it into a temp
@@ -249,6 +239,14 @@
           query.first({
             success: function(results) {
               spreadsheetArray.push(results);
+              if (spreadsheetArray.length == self.printableShop.length) {
+                $('#loading').hide();
+                $scope.$apply();
+                buildTable(spreadsheetArray);
+                buildPackingSlips(spreadsheetArray);
+                $("#printButton").empty();
+                $("#printButton").append('<button class="clean-gray-btn" onclick="window.print()">Print</button>');
+              }
             },
             error: function(object, error) {
               // The object was not retrieved successfully.
