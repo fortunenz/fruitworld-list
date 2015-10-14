@@ -806,6 +806,60 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "AF001",
+      "description": "Aluminium foil (300mm x 5m)",
+      "unit": "Box",
+      "quantity": 100,
+      "packaging": "100 boxes/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "AF002",
+      "description": "Aluminium foil (450mm x 5m)",
+      "unit": "Box",
+      "quantity": 50,
+      "packaging": "50 boxes/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "CLW001",
+      "description": "Clingwrap (300mm x 30m)",
+      "unit": "Box",
+      "quantity": 50,
+      "packaging": "50 boxes/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "TAPE01",
+      "description": "Packaging tape (48mm x 100m)",
+      "unit": "Roll",
+      "quantity": 36,
+      "packaging": "36 rolls/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "TAPE02B",
+      "description": "Packaging tape (48mm x 50y) brown",
+      "unit": "Roll",
+      "quantity": 72,
+      "packaging": "72 rolls/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "TAPE02C",
+      "description": "Packaging tape (48mm x 50y) clear",
+      "unit": "Roll",
+      "quantity": 72,
+      "packaging": "72 rolls/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "CHB01",
       "description": "Checkout paper bag (Small)",
       "unit": "Ctn",
