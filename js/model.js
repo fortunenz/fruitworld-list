@@ -309,6 +309,23 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "TP002",
+      "description": "Interfold hand towels blue",
+      "unit": "Ctn",
+      "packaging": "4,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "TP004",
+      "description": "Facial tissues",
+      "unit": "Box",
+      "quantity": 48
+      "packaging": "48 boxes/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "NB405",
       "description": "Netlon bag (405mm) red",
       "unit": "1000",
