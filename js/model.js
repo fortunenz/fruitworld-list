@@ -773,6 +773,24 @@ var model = {
         "ordered": 0
     },
     {
+        "code": "GLOVES02M",
+        "description": "Latex gloves medium",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
+    },
+    {
+        "code": "GLOVES02L",
+        "description": "Latex gloves large",
+        "unit": "Box",
+        "quantity": 10,
+        "packaging": "10 boxes/ctn",
+        "orderAs": "ctn",
+        "ordered": 0
+    },
+    {
       "code": "T2551",
       "description": "Plastic box T2551",
       "unit": "Ctn",
