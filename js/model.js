@@ -320,7 +320,7 @@ var model = {
       "code": "TP004",
       "description": "Facial tissues",
       "unit": "Box",
-      "quantity": 48
+      "quantity": 48,
       "packaging": "48 boxes/ctn",
       "orderAs": "ctn",
       "ordered": 0
