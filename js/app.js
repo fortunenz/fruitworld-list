@@ -20,6 +20,7 @@
       shopQuery.find({
         success: function(results) {
           for (i = 0, len = results.length; i < len; i++) {
+            results[i].attributes.clicked = false;
             self.shops.push(results[i].attributes);
           }
           sortByKey(self.shops, "name");
