@@ -10,6 +10,15 @@ var model = {
       "ordered": 0
     },
     {
+      "code": "SUPA01",
+      "description": "Supa singlet bag (Large)",
+      "unit": "1000",
+      "quantity": 2000,
+      "packaging": "2,000 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
       "code": "FW002",
       "description": "Fruit World singlet bag (Small)",
       "unit": "1000",
