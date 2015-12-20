@@ -183,9 +183,9 @@ var model = {
     {
       "code": "MUSH01",
       "description": "Printed mushroom paper bag",
-      "unit": "Pack",
+      "unit": "Pkt",
       "packaging": "500 pcs/pkt",
-      "orderAs": "pack",
+      "orderAs": "pkt",
       "ordered": 0
     },
     {
@@ -828,6 +828,14 @@ var model = {
       "description": "Plastic box T3626 (500 grams)",
       "unit": "Ctn",
       "packaging": "220 pcs/ctn",
+      "orderAs": "ctn",
+      "ordered": 0
+    },
+    {
+      "code": "T800",
+      "description": "Plastic box T800 (800 grams)",
+      "unit": "Ctn",
+      "packaging": "300 pcs/ctn",
       "orderAs": "ctn",
       "ordered": 0
     },
