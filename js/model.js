@@ -11,7 +11,7 @@ var model = {
     },
     {
       "code": "SUPA01",
-      "description": "Supa singlet bag (Large)",
+      "description": "Supa Fruit Mart singlet bag (Large)",
       "unit": "1000",
       "quantity": 2000,
       "packaging": "2,000 pcs/ctn",
@@ -824,8 +824,8 @@ var model = {
       "ordered": 0
     },
     {
-      "code": "T3628",
-      "description": "Plastic box T3628 (500 grams)",
+      "code": "T3626",
+      "description": "Plastic box T3626 (500 grams)",
       "unit": "Ctn",
       "packaging": "220 pcs/ctn",
       "orderAs": "ctn",
