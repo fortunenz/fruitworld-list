@@ -60,7 +60,6 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += '<p class="packingP right">Website:  <a href="#">www.fortunenz.com </a></p></div>';
           packingSlip += '</div>';
           // Left side shop details
-          //packingSlip += '<h1 style="text-align: center">Packing Slip</h1>'
           packingSlip += '<div class="row packingRow"><div class="col-8">';
           packingSlip += '<p class="packingP">Deliver to:</p>';
           packingSlip += '<p class="packingP"><strong>';
@@ -92,7 +91,6 @@ var buildPackingSlips = function(spreadsheetArray) {
           packingSlip += table;
           // Name and signature
           packingSlip += '<div class="packingSign">';
-          packingSlip += '<br><br><br><br><br><br><br><br><br><br>';
           packingSlip += '<p>Name: _________________________________</p><br>';
           packingSlip += '<p>Signature: _____________________________</p>';
 

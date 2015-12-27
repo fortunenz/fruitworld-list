@@ -245,8 +245,7 @@
                 $scope.$apply();
                 buildTable(spreadsheetArray);
                 buildPackingSlips(spreadsheetArray);
-                $("#printButton").empty();
-                $("#printButton").append('<button class="clean-gray-btn" onclick="window.print()">Print</button>');
+                $("#printButton").show();
               }
             },
             error: function(object, error) {

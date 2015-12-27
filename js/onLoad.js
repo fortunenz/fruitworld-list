@@ -15,6 +15,7 @@ $("document").ready(function() {
 // Hides the loading gif on load of the application
 window.onload = function() {
   $("#loading").hide();
+  $("#printButton").hide();
   adjustCheckoutSize();
 };
 
