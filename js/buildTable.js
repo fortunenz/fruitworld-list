@@ -2,7 +2,7 @@
 var buildTable = function(spreadsheetArray) {
   $("#print").empty();
 
-  var table = "<br><table>";
+  var table = '<br><table>';
   table += "<tr>";
   table += "<th></th>";
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
@@ -42,7 +42,7 @@ var buildPackingSlips = function(spreadsheetArray) {
         orderNum++;
         for (j = 0; j < 2; j++) {
           packingSlip = "";
-          packingSlip += '<div class="packingSlips">';
+          packingSlip += '<div class="packingSlips packingFullPage">';
           // Header
           packingSlip += '<div class="row">';
           packingSlip += '<h1 class="col-10 packingTitle"><img class="logo"src="images/logo.png"> FORTUNE ENTERPRISES CO (NZ) LTD</h1>';
@@ -92,7 +92,9 @@ var buildPackingSlips = function(spreadsheetArray) {
           // Name and signature
           packingSlip += '<div class="packingSign">';
           packingSlip += '<p>Name: _________________________________</p><br>';
-          packingSlip += '<p>Signature: _____________________________</p>';
+          packingSlip += '<p>Signature: ______________________________</p></div></div>';
+
+          console.log(spreadsheetArray.items);
 
           $("#packingSlip").append(packingSlip);
         }

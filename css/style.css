@@ -348,6 +348,10 @@ table, th, td {
 }
 
 /* Packing slip stylving */
+.packingFullPage {
+  width: 100%;
+}
+
 #packingSlip {
   display: none;
   margin-left: 40px;
