@@ -10,25 +10,30 @@
     // Connects to the firebase server
     var ref = new Firebase('https://popping-torch-7294.firebaseio.com/');
 
+    // Firebase queries ----------------------------------------------------------
+
+    // Pulls data from server for all fruit world customers
+    ref.child("customers").on("value", function(snapshot) {
+      var results = snapshot.val();
+      for (i = 0, len = results.length; i < len; i++) {
+        if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
+          results[i].clicked = false;
+          self.shops.push(results[i]);
+        }
+      }
+      sortByKey(self.shops, "name");
+      $scope.$apply();
+    });
+
+    // updates the order number
+    ref.child("orderNumber").on("value", function(snapshot) {
+      self.orderNumber = snapshot.val();
+    });
+
     var self = this;
 
     // Defines the shops variable for the user to load later
     self.shops = [];
-
-    // Pulls data from server for all fruit world customers
-    self.loadShops = function() {
-      ref.child("customers").on("value", function(snapshot) {
-        var results = snapshot.val();
-        for (i = 0, len = results.length; i < len; i++) {
-          if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
-            results[i].clicked = false;
-            self.shops.push(results[i]);
-          }
-        }
-        sortByKey(self.shops, "name");
-        $scope.$apply();
-      });
-    };
 
     // Login variables
     self.userName = "";
@@ -37,7 +42,6 @@
     if (currentUser) {
       self.access = true;
       self.name = currentUser.attributes.firstName;
-      self.loadShops();
     } else {
       self.access = false;
       self.name = "";
@@ -63,6 +67,7 @@
     self.checkoutItems = [];
     self.items = model.items;
     self.displayedItems = self.items;
+    self.orderNumber = 0;
 
     // Function to log the user in so they can use the program
     self.login = function() {
@@ -242,7 +247,7 @@
                 $('#loading').hide();
                 $scope.$apply();
                 buildTable(spreadsheetArray);
-                buildPackingSlips(spreadsheetArray);
+                buildPackingSlips(spreadsheetArray, self.orderNumber);
                 $("#printButton").show();
               }
             },
