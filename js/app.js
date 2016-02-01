@@ -7,6 +7,9 @@
   var app = angular.module("checklist", []);
 
   app.controller("appCtrl", function($scope, $compile) {
+    // Connects to the firebase server
+    var ref = new Firebase('https://popping-torch-7294.firebaseio.com/');
+
     var self = this;
 
     // Defines the shops variable for the user to load later
@@ -14,21 +17,16 @@
 
     // Pulls data from server for all fruit world customers
     self.loadShops = function() {
-      var shopQuery = new Parse.Query("Customers");
-      shopQuery.limit(1000);
-      shopQuery.containedIn("type", ["Fruit World", "Supa Fruit Mart"]);
-      shopQuery.find({
-        success: function(results) {
-          for (i = 0, len = results.length; i < len; i++) {
-            results[i].attributes.clicked = false;
-            self.shops.push(results[i].attributes);
+      ref.child("customers").on("value", function(snapshot) {
+        var results = snapshot.val();
+        for (i = 0, len = results.length; i < len; i++) {
+          if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
+            results[i].clicked = false;
+            self.shops.push(results[i]);
           }
-          sortByKey(self.shops, "name");
-          $scope.$apply();
-        },
-        error: function(error) {
-          console.log("Error: " + error.code + " " + error.message);
         }
+        sortByKey(self.shops, "name");
+        $scope.$apply();
       });
     };
 
