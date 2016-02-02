@@ -248,16 +248,22 @@
       if (self.printableShop.length < 1) {
         alert("Please select the shops you want to have printed");
       } else {
-        //$('#loading').show();
         var spreadsheetArray = [];
-
-        for (var i = 0, len = $scope.orders.length; i < len; i++) {
-          spreadsheetArray.push($scope.orders[i]);
+        for (var j = 0; j < self.printableShop.length; j++) {
+          for (var i = $scope.orders.length; i > 0; i--) {
+            if (self.printableShop[j].short == $scope.orders[i-1].short) {
+              spreadsheetArray.push($scope.orders[i-1]);
+              break;
+            }
+          }
         }
-
-        buildTable(spreadsheetArray);
-        buildPackingSlips(spreadsheetArray, self.orderNumber);
-        $("#printButton").show();
+        if (spreadsheetArray.length === 0 || spreadsheetArray.length !== self.printableShop.length) {
+          alert("Sorry one of the shops you are trying to load has no data, please submit an order before loading");
+        } else {
+          buildTable(spreadsheetArray);
+          buildPackingSlips(spreadsheetArray, self.orderNumber);
+          $("#printButton").show();
+        }
       }
     };
   });
