@@ -264,26 +264,20 @@
 
   // Helper method for saving shop orders to the Parse cloud
   var saveShopData = function(shop) {
-    shopData = new ShopData();
-    shopData.set("name", shop.selectedBranch.name);
-    shopData.set("short", shop.selectedBranch.short);
-    shopData.set("acc", shop.selectedBranch.acc);
-    shopData.set("address", shop.selectedBranch.address);
-    shopData.set("city", shop.selectedBranch.city);
-    for (i = 0, len = shop.items.length; i < len; i++) {
-      shopData.set(shop.items[i].code, Number(shop.items[i].ordered));
+    var tempJson = {};
+
+    tempJson.name = shop.selectedBranch.name;
+    tempJson.short =  shop.selectedBranch.short;
+    tempJson.acc =  shop.selectedBranch.acc;
+    tempJson.address =  shop.selectedBranch.address;
+    tempJson.city =  shop.selectedBranch.city;
+
+    for (var i = 0; i < shop.items.length; i++) {
+      tempJson[shop.items[i].code] = shop.items[i].ordered;
     }
-    shopData.save(null,{
-      success: function(shopData) {
-        console.log('New object created with objectId: ' + shopData.id);
-        alert("Thanks, Your order has been saved for " + shopData.attributes.name + "!");
-      },
-      error: function(shopData, error) {
-        // Execute any logic that should take place if the save fails.
-        // error is a Parse.Error with an error code and message.
-        alert('Failed to create new object, with error code: ' + error.message);
-      }
-    });
+
+    var shopRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
+    shopRef.push(tempJson);
   };
 
   // Helper method for loading all previously saved data
