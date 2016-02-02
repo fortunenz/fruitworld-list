@@ -1,9 +1,4 @@
 (function() {
-  Parse.initialize("p45yej86tibQrsfKYCcj6UmNw4o7b6kxtsobZnmA", "fXSkEhDGakCYnVv5OOdAfWDmjAuQvlnFI5KOwIUO");
-  var ShopData = Parse.Object.extend("ShopData");
-  var shopData;
-  var query = new Parse.Query(ShopData);
-
   var app = angular.module("checklist", ["firebase"]);
 
   app.controller("appCtrl", function($scope, $compile, $firebaseArray) {
@@ -32,22 +27,39 @@
       self.orderNumber = snapshot.val();
     });
 
+    ref.onAuth(function(authData) {
+      $scope.access = false;
+      if (authData) {
+        $scope.access = true;
+        $scope.userName = getName(authData);
+        ref.child("users").child(authData.uid).set({
+          provider: authData.provider,
+          name: getName(authData)
+        });
+      } else {
+        console.log("Client unauthenticated.")
+      }
+    });
+
+    // find a suitable name based on the meta info given by each provider
+    function getName(authData) {
+      switch(authData.provider) {
+         case 'password':
+           return authData.password.email.replace(/@.*/, '');
+         case 'twitter':
+           return authData.twitter.displayName;
+         case 'facebook':
+           return authData.facebook.displayName;
+      }
+    }
+
     var self = this;
 
     // Defines the shops variable for the user to load later
     self.shops = [];
 
     // Login variables
-    self.userName = "";
     self.password = "";
-    var currentUser = Parse.User.current();
-    if (currentUser) {
-      self.access = true;
-      self.name = currentUser.attributes.firstName;
-    } else {
-      self.access = false;
-      self.name = "";
-    }
 
     // Application variables
     self.viewOrder = {
@@ -74,25 +86,29 @@
     // Function to log the user in so they can use the program
     self.login = function() {
       $("#loading").show();
-      Parse.User.logIn(self.userName, self.password, {
-        success: function(user) {
+      ref.authWithPassword({
+        email    : $scope.userName,
+        password : self.password
+      }, function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
           $("#loading").hide();
-          self.name = user.attributes.firstName;
-          self.access = true;
-          self.loadShops();
-        },
-        error: function(user, error) {
-          $("#loading").hide();
-          // The login failed. Check error to see why.
           alert("Sorry the username or password may be wrong, please try again");
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          $scope.access = true;
+          $("#loading").hide();
+          $scope.$apply();
         }
+      }, {
+        remember: "default"
       });
     };
 
     // Function to log the user out of applciation for security
     self.logout = function() {
-      Parse.User.logOut();
-      self.access = false;
+      ref.unauth();
+      $scope.access = false;
     };
 
     // Loops through items in list and if it matches what's in the search bar

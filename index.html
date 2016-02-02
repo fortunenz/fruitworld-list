@@ -28,11 +28,11 @@
     <h1 id="title" class="no-print col-12"><img class="no-print logo"src="images/logo.png"> Fruit World Checklist</h1>
 
     <!-- The user must first login before they can use the application -->
-    <div ng-show="!app.access" class="no-print">
+    <div ng-show="!access" class="no-print">
       <div class="login-card">
         <h2>Log-in</h2><br>
         <form>
-          <input type="text" name="user" placeholder="Username" ng-model="app.userName">
+          <input type="text" name="user" placeholder="Username" ng-model="userName">
           <input type="password" name="pass" placeholder="Password" ng-model="app.password">
           <input type="submit" name="login" class="login login-submit" value="login" ng-click="app.login()">
         </form>
@@ -40,9 +40,9 @@
     </div>
 
     <!-- If the user has logged in they can use the functions -->
-    <div ng-show="app.access">
+    <div ng-show="access">
       <div class="greeting no-print">
-        <p>Welcome back, {{app.name}}! <br class="greetingBreakline"><button class="clean-gray-btn" ng-click="app.logout()">Logout</button></p>
+        <p>Hi, {{userName}}! <br class="greetingBreakline"><button class="clean-gray-btn" ng-click="app.logout()">Logout</button></p>
       </div>
       <div class="center no-print col-12">
         <button class="clean-gray-btn" ng-click="app.changeView()">{{app.viewOrder.id}}</button>
