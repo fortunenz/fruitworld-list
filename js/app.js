@@ -163,7 +163,29 @@
       self.selectedBranch.acc = data.acc;
       self.selectedBranch.address = data.address;
       self.selectedBranch.city = data.city;
-      loadShopDataList(data, $compile, $scope);
+
+      $("#loadedOrders").empty();
+
+      var tempNum = 0;
+      var temp;
+      temp = '<h3 ng-show="app.selectedBranch.selected">Saved orders for ' + data.name + '</h3>';
+      $("#loadedOrders").append(temp);
+
+      for (i = $scope.orders.length; i > 0; i--) {
+        if ($scope.orders[i-1].short == self.selectedBranch.short) {
+          temp = '<div class="oldOrders"><p>File last modified: ' +
+          $scope.orders[i-1].time +
+          ' <button class="clean-gray-btn" ng-click="app.loadOrder(' +
+          (i-1) +
+          ')">Load</button></p></div>';
+          angular.element(document.getElementById("loadedOrders")).append($compile(temp)($scope));
+          tempNum++;
+          if (tempNum > 4) {
+            break;
+          }
+        }
+      }
+
       self.selectedBranch.selected = true;
       $('html, body').animate({ scrollTop: 0 }, 'fast');
     };
@@ -181,6 +203,7 @@
         tempJson.acc =  self.selectedBranch.acc;
         tempJson.address =  self.selectedBranch.address;
         tempJson.city =  self.selectedBranch.city;
+        tempJson.time = new Date().toDateString();
 
         for (var i = 0; i < self.items.length; i++) {
           tempJson[self.items[i].code] = self.items[i].ordered;
@@ -207,25 +230,15 @@
 
     // Loads a previously saved order for user to modify and update
     self.loadOrder = function(location) {
-      query = new Parse.Query(ShopData);
-      query.equalTo("name", self.selectedBranch.name);
-      query.find({
-        success: function(results) {
-          var serverItems = results[location].attributes;
-          for (i = 0, len = self.items.length; i < len; i++) {
-            if (self.items[i].code in serverItems) {
-              self.items[i].ordered = serverItems[self.items[i].code];
-            }
-          }
-          self.checkoutList();
-          $scope.$apply();
-          $('html, body').animate({ scrollTop: 0 }, 'fast');
-          alert("Previous order for " + self.selectedBranch.name + " from " + results[location].updatedAt + " has been loaded");
-        },
-        error: function(error) {
-          alert("Error: " + error.code + " " + error.message);
+      var object = $scope.orders[location];
+      for (i = 0, len = self.items.length; i < len; i++) {
+        if (self.items[i].code in object) {
+          self.items[i].ordered = object[self.items[i].code];
         }
-      });
+      }
+      self.checkoutList();
+      $('html, body').animate({ scrollTop: 0 }, 'fast');
+      alert("Previous order for " + self.selectedBranch.name + " from " + object.time + " has been loaded");
     };
 
     // Add the shop to the print list if checkbox is checked
@@ -267,34 +280,4 @@
       }
     };
   });
-
-  // Helper method for loading all previously saved data
-  var loadShopDataList = function(shop, compile, scope) {
-    $("#loadedOrders").empty();
-
-    query = new Parse.Query(ShopData);
-    query.equalTo("name", shop.name);
-    query.limit(5);
-    query.descending("updatedAt");
-    query.find({
-      success: function(results) {
-        var temp;
-        temp = '<h3 ng-show="app.selectedBranch.selected">Saved orders for ' + shop.name + '</h3>';
-        $("#loadedOrders").append(temp);
-        for (i = 0, len = results.length; i < len; i++) {
-          temp = '<div class="oldOrders"><p>File last modified: ' +
-            results[i].updatedAt +
-            ' <button class="clean-gray-btn" ng-click="app.loadOrder(' +
-              i +
-              ')">Load</button></p></div>';
-          angular.element(document.getElementById("loadedOrders")).append(compile(temp)(scope));
-        }
-      },
-      error: function(object, error) {
-        // The object was not retrieved successfully.
-        // error is a Parse.Error with an error code and message.
-        console.log("Unable to load saved orders");
-      }
-    });
-  };
 })();
