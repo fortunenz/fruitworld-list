@@ -7,26 +7,6 @@
     var ordersRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
 
     // Firebase queries ----------------------------------------------------------
-    $scope.orders = $firebaseArray(ordersRef);
-
-    // Pulls data from server for all fruit world customers
-    ref.child("customers").once("value", function(snapshot) {
-      var results = snapshot.val();
-      for (i = 0, len = results.length; i < len; i++) {
-        if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
-          results[i].clicked = false;
-          self.shops.push(results[i]);
-        }
-      }
-      sortByKey(self.shops, "name");
-      $scope.$apply();
-    });
-
-    // updates the order number
-    ref.child("orderNumber").on("value", function(snapshot) {
-      self.orderNumber = snapshot.val();
-    });
-
     ref.onAuth(function(authData) {
       $scope.access = false;
       if (authData) {
@@ -36,6 +16,25 @@
           provider: authData.provider,
           name: getName(authData)
         });
+        // Pulls data from server for all fruit world customers
+        ref.child("customers").once("value", function(snapshot) {
+          var results = snapshot.val();
+          self.shops = [];
+          for (i = 0, len = results.length; i < len; i++) {
+            if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
+              results[i].clicked = false;
+              self.shops.push(results[i]);
+            }
+          }
+          sortByKey(self.shops, "name");
+          $scope.$apply();
+        });
+        // updates the order number
+        ref.child("orderNumber").on("value", function(snapshot) {
+          self.orderNumber = snapshot.val();
+        });
+        // Pulls all the past orders from server
+        $scope.orders = $firebaseArray(ordersRef);
       } else {
         console.log("Client unauthenticated.")
       }
@@ -108,6 +107,7 @@
     // Function to log the user out of applciation for security
     self.logout = function() {
       ref.unauth();
+      $scope.userName = "";
       $scope.access = false;
     };
 
