@@ -4,16 +4,18 @@
   var shopData;
   var query = new Parse.Query(ShopData);
 
-  var app = angular.module("checklist", []);
+  var app = angular.module("checklist", ["firebase"]);
 
-  app.controller("appCtrl", function($scope, $compile) {
+  app.controller("appCtrl", function($scope, $compile, $firebaseArray) {
     // Connects to the firebase server
     var ref = new Firebase('https://popping-torch-7294.firebaseio.com/');
+    var ordersRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
 
     // Firebase queries ----------------------------------------------------------
+    $scope.orders = $firebaseArray(ordersRef);
 
     // Pulls data from server for all fruit world customers
-    ref.child("customers").on("value", function(snapshot) {
+    ref.child("customers").once("value", function(snapshot) {
       var results = snapshot.val();
       for (i = 0, len = results.length; i < len; i++) {
         if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
@@ -168,11 +170,27 @@
 
     // Submit the order data to the server for later
     // printing
-    self.saveOrder = function(data) {
+    self.saveOrder = function() {
       if (self.selectedBranch.name === "") {
         alert("Please select a branch before you submit");
       } else {
-        saveShopData(data);
+        var tempJson = {};
+
+        tempJson.name = self.selectedBranch.name;
+        tempJson.short =  self.selectedBranch.short;
+        tempJson.acc =  self.selectedBranch.acc;
+        tempJson.address =  self.selectedBranch.address;
+        tempJson.city =  self.selectedBranch.city;
+
+        for (var i = 0; i < self.items.length; i++) {
+          tempJson[self.items[i].code] = self.items[i].ordered;
+        }
+
+        var shopRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
+        shopRef.push(tempJson);
+        alert("Thanks, Your order has been saved for " + self.selectedBranch.name + "!");
+
+        // Resets the view
         self.selectedBranch.name = "";
         self.selectedBranch.short = "";
         self.selectedBranch.acc = "";
@@ -230,59 +248,24 @@
       if (self.printableShop.length < 1) {
         alert("Please select the shops you want to have printed");
       } else {
-        $('#loading').show();
+        //$('#loading').show();
         var spreadsheetArray = [];
 
-        query.descending("updatedAt");
-
-        // Gets all the data from the server and pushes it into a temp
-        // array which will be used to build a spreadsheet
-        for (i = 0, len = self.printableShop.length; i < len; i++) {
-          query.equalTo("name", self.printableShop[i].name);
-          query.descending("updatedAt");
-          query.first({
-            success: function(results) {
-              spreadsheetArray.push(results);
-              if (spreadsheetArray.length == self.printableShop.length) {
-                $('#loading').hide();
-                $scope.$apply();
-                buildTable(spreadsheetArray);
-                buildPackingSlips(spreadsheetArray, self.orderNumber);
-                $("#printButton").show();
-              }
-            },
-            error: function(object, error) {
-              // The object was not retrieved successfully.
-              // error is a Parse.Error with an error code and message.
-              console.log("Unable to get saved data");
-            }
-          });
+        for (var i = 0, len = $scope.orders.length; i < len; i++) {
+          spreadsheetArray.push($scope.orders[i]);
         }
+
+        buildTable(spreadsheetArray);
+        buildPackingSlips(spreadsheetArray, self.orderNumber);
+        $("#printButton").show();
       }
     };
   });
 
-  // Helper method for saving shop orders to the Parse cloud
-  var saveShopData = function(shop) {
-    var tempJson = {};
-
-    tempJson.name = shop.selectedBranch.name;
-    tempJson.short =  shop.selectedBranch.short;
-    tempJson.acc =  shop.selectedBranch.acc;
-    tempJson.address =  shop.selectedBranch.address;
-    tempJson.city =  shop.selectedBranch.city;
-
-    for (var i = 0; i < shop.items.length; i++) {
-      tempJson[shop.items[i].code] = shop.items[i].ordered;
-    }
-
-    var shopRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
-    shopRef.push(tempJson);
-  };
-
   // Helper method for loading all previously saved data
   var loadShopDataList = function(shop, compile, scope) {
     $("#loadedOrders").empty();
+
     query = new Parse.Query(ShopData);
     query.equalTo("name", shop.name);
     query.limit(5);

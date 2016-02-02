@@ -6,7 +6,7 @@ var buildTable = function(spreadsheetArray) {
   table += "<tr>";
   table += "<th></th>";
   for (i = 0, len = spreadsheetArray.length; i < len; i++) {
-    table += "<th>" + spreadsheetArray[i].attributes.short + "</th>";
+    table += "<th>" + spreadsheetArray[i].short + "</th>";
   }
   table += "<th>Total</th>";
   table += "</tr>";
@@ -54,13 +54,13 @@ var buildPackingSlips = function(spreadsheetArray, orderNum) {
       packingSlip += '<div class="row packingRow"><div class="col-8">';
       packingSlip += '<p class="packingP">Deliver to:</p>';
       packingSlip += '<p class="packingP"><strong>';
-      packingSlip += spreadsheetArray[i].attributes.name;
+      packingSlip += spreadsheetArray[i].name;
       packingSlip += '</strong></p>';
       packingSlip += '<p class="packingP">';
-      packingSlip += spreadsheetArray[i].attributes.address;
+      packingSlip += spreadsheetArray[i].address;
       packingSlip += '</p>';
       packingSlip += '<p class="packingP">';
-      packingSlip += spreadsheetArray[i].attributes.city;
+      packingSlip += spreadsheetArray[i].city;
       packingSlip += '</p></div>';
       // Right side date + packing slip number
       packingSlip += '<div class="col-4">';
@@ -68,7 +68,7 @@ var buildPackingSlips = function(spreadsheetArray, orderNum) {
       packingSlip += orderNum;
       packingSlip += '</p>';
       packingSlip += '<p class="packingP">Account no.: ';
-      packingSlip += spreadsheetArray[i].attributes.acc;
+      packingSlip += spreadsheetArray[i].acc;
       packingSlip += '</p>';
       packingSlip += '<p class="packingP">Date: ' + date + '</p>';
       packingSlip += '</div></div>';
@@ -101,15 +101,15 @@ var buildRow = function(spreadsheetArray) {
   for (k = 0; k < items.length; k++) {
     tempTotal = 0;
     for (i = 0, len = spreadsheetArray.length; i < len; i++) {
-      tempTotal += spreadsheetArray[i].attributes[items[k].code];
+      tempTotal += spreadsheetArray[i][items[k].code];
     }
 
     if (tempTotal > 0) {
       table += "<tr><th>" + items[k].description + "</th>";
       for (i = 0, len = spreadsheetArray.length; i < len; i++) {
         table += "<td>";
-        if (spreadsheetArray[i].attributes[items[k].code] > 0) {
-          table += spreadsheetArray[i].attributes[items[k].code];
+        if (spreadsheetArray[i][items[k].code] > 0) {
+          table += spreadsheetArray[i][items[k].code];
         }
         table += "</td>";
       }
@@ -127,8 +127,8 @@ var buildPackingRow = function(spreadsheetArray) {
   var quantity = 0;
 
   for (k = 0; k < items.length; k++) {
-    if (items[k].code in spreadsheetArray.attributes) {
-      if (spreadsheetArray.attributes[items[k].code] > 0) {
+    if (items[k].code in spreadsheetArray) {
+      if (spreadsheetArray[items[k].code] > 0) {
         table += '<tr><td>';
         table += items[k].code;
         table += '</td>';
@@ -144,10 +144,10 @@ var buildPackingRow = function(spreadsheetArray) {
         var reQuantitiy;
 
         if (items[k].code.includes("RE")) {
-          reQuantitiy = spreadsheetArray.attributes[items[k].code] * 1000;
+          reQuantitiy = spreadsheetArray[items[k].code] * 1000;
           table += insertComma(reQuantitiy.toString()) + " pcs";
         } else if (items[k].unit == "1000") {
-          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          quantity =  spreadsheetArray[items[k].code] * items[k].quantity;
 
           // Checks if it's a set item or just normal pcs
           if (items[k].orderAs == "ctn+ctn") {
@@ -156,13 +156,13 @@ var buildPackingRow = function(spreadsheetArray) {
             table += insertComma(quantity.toString()) + " pcs";
           }
         } else if (items[k].unit == "Roll" && items[k].orderAs == "ctn") {
-          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          quantity =  spreadsheetArray[items[k].code] * items[k].quantity;
           table += insertComma(quantity.toString()) + " rolls";
         } else if (items[k].unit == "Box" && items[k].orderAs == "ctn") {
-          quantity =  spreadsheetArray.attributes[items[k].code] * items[k].quantity;
+          quantity =  spreadsheetArray[items[k].code] * items[k].quantity;
           table += insertComma(quantity.toString()) + " boxes";
         } else {
-          table += spreadsheetArray.attributes[items[k].code] + " " + items[k].orderAs;
+          table += spreadsheetArray[items[k].code] + " " + items[k].orderAs;
         }
 
         table += '</td>';
@@ -172,22 +172,22 @@ var buildPackingRow = function(spreadsheetArray) {
 
         // Logic for gloves
         if (items[k].code.includes("GLOVE")) {
-          if (spreadsheetArray.attributes[items[k].code] < 1) {
-            table += (spreadsheetArray.attributes[items[k].code] * 10)+ " boxes";
-          } else if (spreadsheetArray.attributes[items[k].code].toString().includes(".")){
-            table += parseInt(spreadsheetArray.attributes[items[k].code]-(spreadsheetArray.attributes[items[k].code]%1)) + " ctn + " + parseInt((spreadsheetArray.attributes[items[k].code]*10)-((spreadsheetArray.attributes[items[k].code]-(spreadsheetArray.attributes[items[k].code]%1))*10))+ " boxes";
+          if (spreadsheetArray[items[k].code] < 1) {
+            table += (spreadsheetArray[items[k].code] * 10)+ " boxes";
+          } else if (spreadsheetArray[items[k].code].toString().includes(".")){
+            table += parseInt(spreadsheetArray[items[k].code]-(spreadsheetArray[items[k].code]%1)) + " ctn + " + parseInt((spreadsheetArray[items[k].code]*10)-((spreadsheetArray[items[k].code]-(spreadsheetArray[items[k].code]%1))*10))+ " boxes";
           } else {
-            table += spreadsheetArray.attributes[items[k].code] + " ctn";
+            table += spreadsheetArray[items[k].code] + " ctn";
           }
         // Logic for bag seal tape 12mmx66m
         } else if (items[k].code.includes("SEAL12")) {
-          if (spreadsheetArray.attributes[items[k].code]%36 === 0) {
-            table += (spreadsheetArray.attributes[items[k].code] / 36) + " ctn";
+          if (spreadsheetArray[items[k].code]%36 === 0) {
+            table += (spreadsheetArray[items[k].code] / 36) + " ctn";
           } else {
-            if (spreadsheetArray.attributes[items[k].code] < 36) {
-              table += spreadsheetArray.attributes[items[k].code] + " rolls";
+            if (spreadsheetArray[items[k].code] < 36) {
+              table += spreadsheetArray[items[k].code] + " rolls";
             } else {
-              table += ((spreadsheetArray.attributes[items[k].code]/36)-((spreadsheetArray.attributes[items[k].code]%36)/36)) + " ctn + " + (spreadsheetArray.attributes[items[k].code] % 36)+ " rolls";
+              table += ((spreadsheetArray[items[k].code]/36)-((spreadsheetArray[items[k].code]%36)/36)) + " ctn + " + (spreadsheetArray[items[k].code] % 36)+ " rolls";
             }
           }
         // Logic for resealable bags
@@ -202,10 +202,10 @@ var buildPackingRow = function(spreadsheetArray) {
             }
           }
         } else if (items[k].orderAs == "1000") {
-          quantity =  insertComma(spreadsheetArray.attributes[items[k].code].toString()) * items[k].quantity;
+          quantity =  insertComma(spreadsheetArray[items[k].code].toString()) * items[k].quantity;
           table += quantity + " pcs";
         } else {
-          table += spreadsheetArray.attributes[items[k].code] + ' ' + items[k].orderAs;
+          table += spreadsheetArray[items[k].code] + ' ' + items[k].orderAs;
         }
 
         table += '</td>';

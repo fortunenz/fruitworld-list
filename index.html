@@ -14,6 +14,9 @@
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
     <script src="js/onLoad.js"></script>
     <script src="js/buildTable.js" async></script>
     <script src="js/model.js"></script>
@@ -59,7 +62,7 @@
           </ul>
         </nav>
         <div>
-          <form id="orderForm" class="row" ng-submit="app.saveOrder(app)">
+          <form id="orderForm" class="row" ng-submit="app.saveOrder()">
             <span ng-repeat="item in app.displayedItems" class="item col-12 row">
               <strong class="col-12">{{item.description}}:</strong>
               <input ng-change="app.checkoutList()" ng-model="item.ordered" type="number" step="0.01" value="0" min="0" class="col-7" onclick="this.select()">
