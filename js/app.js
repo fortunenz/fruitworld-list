@@ -4,7 +4,6 @@
   app.controller("appCtrl", function($scope, $compile, $firebaseArray) {
     // Connects to the firebase server
     var ref = new Firebase('https://popping-torch-7294.firebaseio.com/');
-    var ordersRef = new Firebase('https://popping-torch-7294.firebaseio.com/fruitWorldOrders');
 
     // Firebase queries ----------------------------------------------------------
     ref.onAuth(function(authData) {
@@ -16,25 +15,26 @@
           provider: authData.provider,
           name: getName(authData)
         });
+
         // Pulls data from server for all fruit world customers
-        ref.child("customers").once("value", function(snapshot) {
-          var results = snapshot.val();
-          self.shops = [];
-          for (i = 0, len = results.length; i < len; i++) {
-            if (results[i].type == "Fruit World" || results[i].type == "Supa Fruit Mart") {
-              results[i].clicked = false;
-              self.shops.push(results[i]);
+        var tempShops = $firebaseArray(ref.child('customers'));
+        $scope.shops = [];
+        tempShops.$loaded().then(function() {
+          for (i = 0, len = tempShops.length; i < len; i++) {
+            if (tempShops[i].type == "Fruit World" || tempShops[i].type == "Supa Fruit Mart") {
+              tempShops[i].clicked = false;
+              $scope.shops.push(tempShops[i]);
             }
           }
-          sortByKey(self.shops, "name");
-          $scope.$apply();
+          sortByKey($scope.shops, "name");
         });
+
         // updates the order number
         ref.child("slipNumber").on("value", function(snapshot) {
           self.slipNumber = snapshot.val();
         });
         // Pulls all the past orders from server
-        $scope.orders = $firebaseArray(ordersRef);
+        $scope.orders = $firebaseArray(ref.child('fruitWorldOrders'));
       } else {
         console.log("Client unauthenticated.")
       }
@@ -53,9 +53,6 @@
     }
 
     var self = this;
-
-    // Defines the shops variable for the user to load later
-    self.shops = [];
 
     // Login variables
     self.password = "";
