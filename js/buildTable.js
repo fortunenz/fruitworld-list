@@ -20,7 +20,7 @@ var buildTable = function(spreadsheetArray) {
 
 // Loops through each shop in spreadsheet and builds a packing slip
 // to be printed
-var buildPackingSlips = function(spreadsheetArray, orderNum) {
+var buildPackingSlips = function(spreadsheetArray, slipNumber) {
   $("#packingSlip").empty();
   var packingSlip;
 
@@ -30,7 +30,7 @@ var buildPackingSlips = function(spreadsheetArray, orderNum) {
   var date = tokens[2] + " " + tokens[1] + " " + tokens[3];
 
   for (i = 0; i < spreadsheetArray.length; i++) {
-    orderNum++;
+    slipNumber++;
     for (j = 0; j < 2; j++) {
       packingSlip = "";
       packingSlip += '<div class="packingSlips packingFullPage">';
@@ -65,7 +65,7 @@ var buildPackingSlips = function(spreadsheetArray, orderNum) {
       // Right side date + packing slip number
       packingSlip += '<div class="col-4">';
       packingSlip += '<p class="packingP">Packing slip no.: ';
-      packingSlip += orderNum;
+      packingSlip += slipNumber;
       packingSlip += '</p>';
       packingSlip += '<p class="packingP">Account no.: ';
       packingSlip += spreadsheetArray[i].acc;
@@ -88,8 +88,8 @@ var buildPackingSlips = function(spreadsheetArray, orderNum) {
       $("#packingSlip").append(packingSlip);
     }
   }
-  var orderNumRef = new Firebase('https://popping-torch-7294.firebaseio.com/orderNumber');
-  orderNumRef.set(orderNum);
+  var slipNumberRef = new Firebase('https://popping-torch-7294.firebaseio.com/slipNumber');
+  slipNumberRef.set(slipNumber);
 };
 
 // Builds all the rows

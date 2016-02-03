@@ -30,8 +30,8 @@
           $scope.$apply();
         });
         // updates the order number
-        ref.child("orderNumber").on("value", function(snapshot) {
-          self.orderNumber = snapshot.val();
+        ref.child("slipNumber").on("value", function(snapshot) {
+          self.slipNumber = snapshot.val();
         });
         // Pulls all the past orders from server
         $scope.orders = $firebaseArray(ordersRef);
@@ -80,7 +80,7 @@
     self.checkoutItems = [];
     self.items = model.items;
     self.displayedItems = self.items;
-    self.orderNumber = 0;
+    self.slipNumber = 0;
 
     // Function to log the user in so they can use the program
     self.login = function() {
@@ -290,7 +290,7 @@
           alert("Sorry one of the shops you are trying to load has no data, please submit an order before loading");
         } else {
           buildTable(spreadsheetArray);
-          buildPackingSlips(spreadsheetArray, self.orderNumber);
+          buildPackingSlips(spreadsheetArray, self.slipNumber);
           $("#printButton").show();
         }
       }
