@@ -5,7 +5,7 @@ var buildTable = function(spreadsheetArray) {
   var table = '<br><table>';
   table += "<tr>";
   table += "<th></th>";
-  for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+  for (var i = 0, len = spreadsheetArray.length; i < len; i++) {
     table += "<th>" + spreadsheetArray[i].short + "</th>";
   }
   table += "<th>Total</th>";
@@ -29,9 +29,9 @@ var buildPackingSlips = function(spreadsheetArray, slipNumber) {
   var tokens = systemDate.toString().split(" ");
   var date = tokens[2] + " " + tokens[1] + " " + tokens[3];
 
-  for (i = 0; i < spreadsheetArray.length; i++) {
+  for (var i = 0; i < spreadsheetArray.length; i++) {
     slipNumber++;
-    for (j = 0; j < 2; j++) {
+    for (var j = 0; j < 2; j++) {
       packingSlip = "";
       packingSlip += '<div class="packingSlips packingFullPage">';
       // Header
@@ -98,9 +98,9 @@ var buildRow = function(spreadsheetArray) {
   var tempTotal;
   var items = model.items;
 
-  for (k = 0; k < items.length; k++) {
+  for (var k = 0; k < items.length; k++) {
     tempTotal = 0;
-    for (i = 0, len = spreadsheetArray.length; i < len; i++) {
+    for (var i = 0, len = spreadsheetArray.length; i < len; i++) {
       tempTotal += spreadsheetArray[i][items[k].code];
     }
 
@@ -126,7 +126,7 @@ var buildPackingRow = function(spreadsheetArray) {
   var items = model.items;
   var quantity = 0;
 
-  for (k = 0; k < items.length; k++) {
+  for (var k = 0; k < items.length; k++) {
     if (items[k].code in spreadsheetArray) {
       if (spreadsheetArray[items[k].code] > 0) {
         table += '<tr><td>';

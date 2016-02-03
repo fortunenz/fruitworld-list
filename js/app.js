@@ -20,7 +20,7 @@
         var tempShops = $firebaseArray(ref.child('customers'));
         $scope.shops = [];
         tempShops.$loaded().then(function() {
-          for (i = 0, len = tempShops.length; i < len; i++) {
+          for (var i = 0, len = tempShops.length; i < len; i++) {
             if (tempShops[i].type == "Fruit World" || tempShops[i].type == "Supa Fruit Mart") {
               tempShops[i].clicked = false;
               $scope.shops.push(tempShops[i]);
@@ -36,7 +36,7 @@
         // Pulls all the past orders from server
         $scope.orders = $firebaseArray(ref.child('fruitWorldOrders'));
       } else {
-        console.log("Client unauthenticated.")
+        console.log("Client unauthenticated.");
       }
     });
 
@@ -115,7 +115,7 @@
         self.displayedItems = self.items;
       } else {
         self.displayedItems = [];
-        for (i = 0, len = self.items.length; i < len; i++) {
+        for (var i = 0, len = self.items.length; i < len; i++) {
           if (self.items[i].description.toLowerCase().includes(self.searchBox.toLowerCase()) || self.items[i].code.toLowerCase().includes(self.searchBox.toLowerCase())) {
             self.displayedItems.push(self.items[i]);
           }
@@ -137,7 +137,7 @@
     // Appends data to the checkout list
     self.checkoutList = function() {
       var temp;
-      for (i = 0, len = self.items.length; i < len; i++) {
+      for (var i = 0, len = self.items.length; i < len; i++) {
         temp = $.inArray(self.items[i], self.checkoutItems);
         if (self.items[i].ordered > 0) {
           if (temp === -1) {
@@ -184,7 +184,7 @@
       temp = '<h3 ng-show="app.selectedBranch.selected">Saved orders for ' + data.name + '</h3>';
       $("#loadedOrders").append(temp);
 
-      for (i = $scope.orders.length; i > 0; i--) {
+      for (var i = $scope.orders.length; i > 0; i--) {
         if ($scope.orders[i-1].short == self.selectedBranch.short) {
           temp = '<div class="oldOrders"><p>File last modified: ' +
           $scope.orders[i-1].time +
@@ -233,7 +233,7 @@
         self.selectedBranch.address = "";
         self.selectedBranch.city = "";
         self.selectedBranch.selected = false;
-        for (i = 0, len = self.items.length; i < len; i++) {
+        for (i = 0; i < self.items.length; i++) {
           self.items[i].ordered = 0;
         }
         self.checkoutItems = [];
@@ -244,7 +244,7 @@
     // Loads a previously saved order for user to modify and update
     self.loadOrder = function(location) {
       var object = $scope.orders[location];
-      for (i = 0, len = self.items.length; i < len; i++) {
+      for (var i = 0, len = self.items.length; i < len; i++) {
         if (self.items[i].code in object) {
           self.items[i].ordered = object[self.items[i].code];
         }
@@ -260,7 +260,7 @@
         shop.clicked = true;
         self.printableShop.push(shop);
       } else {
-        for (i = 0; i < self.printableShop.length; i++) {
+        for (var i = 0; i < self.printableShop.length; i++) {
           if (self.printableShop[i].name == shop.name) {
             shop.clicked = false;
             self.printableShop.splice(i, 1);
