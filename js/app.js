@@ -94,6 +94,11 @@
           console.log("Authenticated successfully with payload:", authData);
           $scope.access = true;
           $("#loading").hide();
+
+          self.printableShop = [];
+          $("#print").empty();
+          $("#packingSlip").empty();
+          $("#printButton").hide();
           $scope.$apply();
         }
       }, {
@@ -104,8 +109,9 @@
     // Function to log the user out of applciation for security
     self.logout = function() {
       ref.unauth();
-      $scope.userName = "";
       $scope.access = false;
+      $scope.userName = "";
+      self.password = "";
     };
 
     // Loops through items in list and if it matches what's in the search bar
